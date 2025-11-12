@@ -1,0 +1,92 @@
+To print on console : 
+flow : left to right 
+console.log()
+
+*VARIABLE :
+let Variable_name = "string" ;
+let Variable_name = number ; // re-assign is allowed.
+
+var Variable_name = number; //  re-assign is allowed.
+
+const Variable_name = number ; // re-assigment is not allowed.
+
+*Difference between var & let :
+var : you can declare same name VARIABLE multiple times, VARIABLE could be accessed out of scope like if-else..
+    But it respected function & global scope in which it showed error if tried to access.
+let : same name VARIABLE can't be re-declared and can't be accessed out of any scope.
+
+
+*Primitive datatype : is immutable, thus you can't change after creating.But then how are we able to change?
+                    answer is it create a new space in memory for the changes you made.
+                    proof : 
+                    let str = "Krish";
+                    str[0] = "o";
+                    console.log(str);
+
+***** Primitive data is compared based on value and not position!
+
+1. number : int,float both can be used. 8Byte
+    let a = 10; 
+    let a = 3.12; 
+2. string
+    let a = "STRING name";
+    let a = 'STring shsh';
+3. boolean
+    let a = true;
+    let a = false;
+4. undefined : value don't exist.
+    let a;
+    so here a declared without any value will, thus have undefined.
+    const a; //ERROR cause const need value at that time only!!
+5. null : i don't want to put anything but want to assign.
+    let a = null;
+    output : null
+6. bigint : n at end!
+    let a = 12345678.3456789n;
+7. symbol : to create a unqiue value    
+    const id1 = Symbol("id");
+    console.log(id1) 
+    output : Symbol(id)
+
+*Non-primitive datatype : mutable thus we can change those value. 
+                         Pass By Reference!
+
+** Object COMPARING : IF YOU ARE COMPARING OBJECT THEN BOTH VARIABLE SHOULD POINT AT SAME LOCATION !!!
+***** Object COMPARision as Reference!
+** Even if non-primitive is empty still it gets memory thus boolean of empty non-primitive is true.cause it only check if memory allocated.
+
+1. Array
+    let a = [10,true,"rohit",12.23];
+    a[0] = 80; // mutable!
+    a.push(); // push back value
+
+2. Object, key value pair.
+        *obj.name = "rohit"; // access also value are changable
+    let obj = {
+        name:"krish",
+        account:123123,
+        age : 18,
+        categeri:'general'
+    }
+    let ob2 = obj;
+    ob2.name = "rohit";
+imp ***// Changes happen in original obj also !!! cause obj & ob2 is same in memory!!!! same for Array!!!
+
+3. function, function ca be stored in VARIABLE!!!
+    let a = function function_name()
+    {
+        console.log("Hello");
+    }
+    function_name(); // calls function.
+    console.log(a());
+    console.log(a); // gives [function: function_name]
+
+*TYPEOF : 
+    console.log(typeof a); // give what is the type of a VARIABLE!
+    let a = null;
+    console.log(typeof a)// object! Bug!
+    all non-primitive like Array & Object are both object!!
+    function also object but shows in console object!!
+
+
+

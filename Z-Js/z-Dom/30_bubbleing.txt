@@ -1,0 +1,35 @@
+* if child is clicked and parent will also get event listen if it has.
+    first child event exectued, then parent then its parent...
+    * change ordering first parent exectued then child.
+        c.addEventListener('click', ()=>{ // all 3 will be 
+            console.log("c is clicked");
+        },true) // by default its false so we don't write normally.
+    * what does this true or false means
+        it means capture phase is on or off.
+
+*Tree is traverse from top window>document>html- capture phase, target phase, bubbling phase.
+capture phase = false // reach child/target then goes back to parent
+    *false is the bubbling phase.!!
+    1.It first goes where actual action is done - from top of tree.
+    2.then perform the addEventListener function 
+    3.then it goes back through Tree and keeps checking if and addEventListener is applied or not if yes then apply it.
+capture phase = true // keep checking parent untill it reach child/target
+    1.It first check from top if event listen is added or not 
+    2.if added then perform the addEventListener function 
+    3.It goes on untill it find the target or actual action element & perform addEventListener function.
+  
+* event object :
+c.addEventListener('click', (e)=>{ 
+    console.log(e); // event object detail explanation about the event. eg cooridinate, type of event
+    ** e.stopPropagation(); // no bubbling!!
+})
+    * e can tell exactly which element you have clicked.points which element caused the event.
+        console.log(e.target); // Gives which element have triggered the event.
+    * meaning no need to put event listener to all just on parent.
+        e.target we can understand which child caused the event to occure.
+        * make changes in that targeted element only.
+        e.target.textContent = "";
+        e.target.style. = "";
+        console.log(e.type); gives wgich type of event
+        e.id; //gives id of that event
+

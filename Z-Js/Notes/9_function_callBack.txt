@@ -1,0 +1,29 @@
+day24 
+
+A function is passed as argument for another function !! Js & React Imp!!
+
+argument of function is itself function.
+
+function meet(){
+    console.log("Lets meet!");
+}
+function dance(){
+    console.log("I am dancing");
+}
+function greet(passedfunctin){
+    console.log("Hello bhai");
+    passedfunctin();
+    console.log("Well next time then!");
+}
+
+// greet(meet()); // first meet will get exectued.then greet.
+greet(meet); //  // first greet will get exectued. pass by reference.
+greet(dance); //  // first greet will get exectued. pass by reference.
+
+* Real world eg : 
+    zomatao order -> payment confime -> make there order - payment division.
+    zomatao+ola merge - so make use of existing to code - flexiable - callback (zomatao or ola).
+
+* You’re right — an inline function alone doesn’t execute.
+    But here’s the key: it’s not supposed to execute on its own.
+    It’s just passed as a value — a function reference

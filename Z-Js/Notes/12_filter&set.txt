@@ -1,0 +1,67 @@
+day 27 :
+
+** .filter() is an array method in JavaScript that:
+Tests each element of an array using a callback function (condition).
+Creates a new array containing only the elements that satisfy (return true for) the condition.
+Does not modify the original array.
+
+* USED to filter array by function-condition! 
+    if condition true then it select & add in new return array.
+    if condition false not included!
+
+const arrayName = [90,2,1,4334,54,664,32];
+
+* .filter() returns a new array ! we can store it in newvariable or print it directly.
+let newvariable = arrayName.filter((number)=>number>25);
+* array is object & filter is a methods.
+* Just like in object we create function , vraiable = {functionkey: function(){},..} 
+    This will be only for that array 
+* If you want it to be allplied for all array then:
+    Array.prototype.functionKey = function(){}
+* So in js there are many inbuilt array function!
+
+on ARRAY some other functions
+* array.find((element) => condition);// It stops at very first element that matches, if not matches return undifined.
+    const arr = [3, 7, 9, 12];
+    const result = arr.find(num => num > 8); 
+    console.log(result); // 9 (first match)
+* .some(()=> === ); // atleast one element in the array passes the test return true else false.
+    const arr = [1, 3, 5];
+    console.log(arr.some(num => num > 4)); // true (because 5 > 4)
+* .every(()=> ===); // every elements should pass the test then true else false.
+    const arr = [2, 4, 6];
+    console.log(arr.every(num => num % 2 === 0)); // true
+
+
+
+** SET :-
+    array could have dublicate value set help us to remove dublicate.
+    it return new array !
+    * syntax :-
+        const vraiable = new Set(arrayName);
+        console.log(vraiable); // set(number) {val1,val2,..} // number->total element present in set.
+* convert set back to array using ... spread operator
+    const vraiable = [...setname];
+
+SET operation ;-
+** add :- add at last 
+    * syntax :- 
+        setname.add(value_tobe_added); 
+        let z = setname.add(value_tobe_added); // return entier set !
+
+** has :- check if that element is present in array. true/false
+    * syntax:-
+        const vraiable = setname.has(value_to_check);
+
+** delete :- delete from array.
+    * syntax:-
+        setname.delete(10); // deletes 10 from arrayName
+
+** size :- syntax :- const vraiable = setname.size;
+** clear :- syntax :- setname.clear(); // remove all element from set.
+** Iterate over set :-
+    *forof loop :-
+        for(let num of setname){
+
+        }
+

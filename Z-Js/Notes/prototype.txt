@@ -1,0 +1,9 @@
+* array , object 
+
+* var1.__proto__ = var2;
+// var1 will have var2 property.
+
+*arrayName .length; //length of array 
+
+* slice , splice , sort  .. 
+

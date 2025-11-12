@@ -1,0 +1,49 @@
+Branching :
+
+a->b*->c->d->
+e->f->
+merge : a->b->c->d->merge_confilt 
+
+master branch 
+temp brach - test then add to master branch 
+
+//master
+git checkout master
+
+// new branch
+git checkout -b  "branch-name"
+
+// check brach
+git branch
+
+// delete the branch 
+git branch -D branch-name
+* when you change back to master , changes on other branch is not seen in brach.
+
+// merge 
+git merge branch-name
+
+// merge confit when master also have commited & merge it at in mid of master so merge confict occur
+    When code are different thus merge confilt occur so resolve it mannually.
+    you can combine also choose one also.....
+
+** const age = 20 ; | const age = 90 -> no error : cause value get upadated , by Git !
+    but if const age = 20 | cahnged in master const age = 22 |  const age = 30 -> then it shows merge confilt 
+
+
+## other method : rebase : linear graph
+   *rebasing
+    master : a->b->c* ->d->e 
+    other : s->d 
+    rebase : a->b->c->d->e->s'->d' 
+        s & d are depended on e so s & d will have changes s' & d'
+        e quality will merge.
+
+//rebase : should be other branch
+git rebase master
+git add .
+git rebase --continue // not commit !! // all changes will be done in other banch not master
+git merge master // go to master branch then 
+
+// INSERT : i for insetion 
+:wq // esc + save & quit 

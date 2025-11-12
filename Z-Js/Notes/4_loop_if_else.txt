@@ -1,0 +1,30 @@
+LOOP :
+
+1.for
+for(initial; condition; updation){
+
+}
+
+2.while
+initial
+while(condition){
+    updation
+}
+
+3.do-while
+initial
+do{
+    updation
+}while(condition)
+
+IF-ELSE :
+1.if else-if else 
+if(condition1){
+
+}
+else if(condition2){
+
+}
+else{
+
+}

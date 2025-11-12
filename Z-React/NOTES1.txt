@@ -1,0 +1,29 @@
+React is Js Liberay built on object :-
+React,ReactDOM is a object 
+
+React cdn 
+<!-- react -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<!-- reactDom -->
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+React Native :- used in mobile development. But in those there is no .html so DOM manupulation is different.
+    So, there u don't need reactDom.
+
+** What is cdn ?
+Content delivery network.
+** Can single server solve all request ? Time of request ?
+    They started creating mirror/copy of server Now traffic is reduced. But all server should have same data !!
+    so cdn network/ local network introduced :: so now local servers are connected to each other and to main server.
+    if nearest server don't have data then request goes to main server , server to server travels to get data.
+
+** content comes first then images ?
+    images come from cdn. cdn server hosts the images.when request server we get first html.
+    Images take longer to load even from a CDN because, although CDNs host the actual image files and deliver them from
+    nearby servers, the browser still needs to first parse the HTML before it knows which images to request. Then it must
+    perform network steps like DNS lookup, TCP, and HTTPS handshakes with the CDN, download the full image data (which can be large), and finally decode and render it.
+    So even though a CDN speeds up delivery, the image loading still depends on network latency, file size, and browser processing — which is why text (content) appears first and images follow.
+
+    static data : main + other servers. eg: photos/vedio uploaded already.
+    dynamic data : kept in main server.eg: likes, subsribe, comments
+

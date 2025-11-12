@@ -1,0 +1,60 @@
+Day21 :
+
+string -> primitive -> immutable, so changes.
+
+Different methods of string creation :
+* method 1
+    const str1 = ""; // entier string should be written in this one line
+
+* method 2
+    const str2 = ''; // entier string should be written in this one line
+
+* method 3 : 
+    const str3 = `Strick`;
+    mordern mathod, entier string should be written within `` multiple lines could be used.
+    Writing in the next line , leads to print the string in next line in console.
+    ${variable} , can be used to add variable value in between string.
+    SO THIS IS THE BEST METHOD.
+
+
+Methods/Function : String is array : 0 index : original string is never changed.
+1. syntax : string_name.length
+    Return length of string, including space.
+2. string array so can access each char.
+    string_name[index];
+3. syntax : string_name.toUpperCase()
+    convert to capital letters. New string will be created cause string is immutable.
+4. syntax : string_name.toLowerCase()
+    convert to lower letters. New string will be created cause string is immutable.
+5. syntax : string_name.indexOf("substring") // substring present in main string
+    Searches from the beginning of the string (left → right). If same substring repeated:
+    Returns the first occurrence’s start index. 
+6. syntax : string_name.lastIndexOf("substring")
+    Searches from the end of the string (right → left).If same substring repeated:
+    Returns the last occurrence’s start index.
+ex : let str = "btech is btech student";
+    console.log(str.indexOf("btech"));     // 0  (first one at the start)
+    console.log(str.lastIndexOf("btech")); // 9  (the second one starts at index 9)
+    5 & 6 : is substring don't exist return -1;
+7. syntax : string_name.includes("substring")
+    return true if that "substring" exist in main string. else false.
+8. syntax : string_name.slice(m,n)
+    gives substring from main string from index : m<= character <n
+    mth index included but nth index not included.
+    string_name.slice(m) , only m given then it starts from m and complete string.
+    string_name.slice(-4) , last 4 char will returned.
+    string_name.slice(-4,-2) , last 4th char till last 2nd char. both index included unlike m,n.
+9. syntax : str.substring(2,5)
+    You can't mark -ve index. except all are same operation like slice.
+10. concatination : str = str1 + str2 
+11. add space : str = str1 + " " + str2
+12. syntax : string_name.replace("string_tobe_replaced","new-string")
+      replace first substring only. from left.
+13. syntax : string_name.replaceAll("string_tobe_replaced","new-string")
+      replace all same substring.
+14. syntax : string_name.trim()
+      remove spaces at starting and end.
+15. syntax : string_name.split(",") // based on , split and give those in Array.
+      You can split the string based on reqierment. 
+      Return you in Array after spliting main string.
+  

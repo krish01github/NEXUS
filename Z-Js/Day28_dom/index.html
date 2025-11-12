@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: pink;">
+    <!-- 
+        bodytemp = {
+            tagName: "body",
+            style: {
+                backroundcolor:"pink",
+                children:[h1,h2]// cause body can have many child.
+            }
+        }
+     -->
+    <h1 style="background-color: yellow; color: chartreuse;" id="id_no_1">I am Krish</h1>
+    <!-- temp = {
+        tagname: "h1",
+        id: "id_no_1",
+        background_color:"yellow",
+        color:"green"
+        text-content:"I am Krish"
+    }
+    temp.textContent = "I am Rohit negi"-->
+    <h2>I have an exam</h2>
+
+    <ul>
+        <li>Hi</li>
+        <li>Bye</li>
+        <li>Dui</li>
+    </ul>
+    <script>
+        const temp = window.document.getElementById("id_no_1");
+        temp.textContent = "I changed you file !";
+        temp.style.backgroundColor="white";
+
+        const list = document.getElementsByTagName("li");
+        // Returns an HTMLCollection — NOT an array, but array-like.
+        const arr = [...list];
+
+        const claname = document.getElementsByClassName();// array form
+    </script>
+</body>
+</html>

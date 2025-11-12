@@ -1,0 +1,77 @@
+Day25
+
+**when js code is run : Execution context is created have two Phase.
+    Phase 1 : memory allocation 
+        allocation only for variable which are not in block - block referes to functions
+        variable = undefined ,function memory allocation.
+    Phase 2 : Execution Phase.
+        Assign value to variable if any, eg: variable = 20.
+        * Now if you call a function={function code} then that function should run - function is also code so,
+          Execution context is created :
+            Phase 1 : memory allocation
+                functions - variable=undefined memory allocation.
+            Phase 2 : Execution Phase
+                functions - Assign value to variable. 
+                return to where the function is called. 
+
+**Global Execution Context : Main Js code.
+Phase 1 :
+STACK  | HEAP
+a= *--->   [undefined]
+b= *--->  [undefined]
+fun=*-->   function(object-will get memory & no memory for functions variable)
+ex*-----> [undefined]
+
+Phase 2 :
+stack  | Heap
+a=*---> 10
+b=*---> 20
+fun*----> function
+ex*-----> fun()-check in stack where fun is then create Execution context.
+            |Phase 1 :
+            |    stack  |   heap
+            |    s1*-----> [undefined]
+            |    s2*-----> [undefined]
+            |    res*------>[undefined]
+            |Phase 2 :
+            |    stack  |   heap
+            |    s1*-----> 10
+            |    s2*-----> 20
+            |    res*------>30
+            |-> return 30
+            * after function Execution complete then removed from stack memory. Garbage collector.
+
+*Imp : code
+    console.log(a);
+    var a = 10;
+    // o/p : undefined.
+
+** let & const ?? same for both : temporal dead zone.
+    console.log(a);
+    let a = 10;
+    // o/p : error..........
+    ** how is it allocated in memory
+    ** Phase 1 :
+        a=*--------><uninitialised> // temporal dead zone - untill no value initialised you can't access.
+    ** Phase 2 :
+        a=*-------->10 // now we can access
+
+** method 2-function using variable.
+let a = 10;
+const w = 20;
+const add = function(num1,num2){
+    return num1+num2;
+}
+let ans = add(a,w);
+console.log(ans);
+//Phase 1 :
+    a = <uninitialised>
+    w = <uninitialised>
+    add = <uninitialised> // ** not function code !! cause add is variable.
+    ans = <uninitialised>
+//Phase 2 :
+    a = 10
+    b = 20
+    add =*-----> function code
+    ans=30 //add(a,w) calls function and create Execution context and so on
+

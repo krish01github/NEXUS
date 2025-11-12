@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Form 1</legend>
+        <form action="">
+            <p>Personal Details : </p>
+            <label for="name">First Name : </label>
+            <input type="text" placeholder="Name ? " name="username" id="name" required>
+            <br><br>
+            <label for="lname">Last Name : </label>
+            <input type="text" name="userNEXTname" id="lname">
+            <br><br>
+            <label for="dob">DOB : </label>
+            <input type="date" name="DateOfBirth" id="dob">
+            <br><br>
+            <label>Gender : </label> <br>
+            <label for="male">Male</label>
+            <input type="radio" value ="MALE" name="UserGender" id="male"><br>
+            <label for="female">Female</label>
+            <input type="radio" name="UserGender" value="FEMALE" id="female"><br>
+            <label for="others">Other</label>
+            <input type="radio" name="UserGender" value="OTHERS" id="others"><br>
+            <br><br>
+            <label for="fileo">Upload Your Photo :</label>
+            <input type="file" name="PhotoFile" id="fileo">
+            <br><br>
+            <hr>
+            <p>Contact : </p>
+            <br>
+            <label for="emailadd">E-mail : </label>
+            <input type="email" name="EMAIL" id="emailadd">
+            <br><br>
+            <label for="mess">Send Message : </label><br>
+            <textarea name="Comment" id="mess" cols="40" rows="5"></textarea>
+            <br><br>
+            <hr>
+            <p>Acadimic information : </p>
+            <label for="course">Course : </label>
+            <select name="Enginering" id="">
+                <option selected disabled>select</option>
+                <option value="CSE">CSE</option>
+                <option value="CIVIL">civil</option>
+                <option value="EEE">EEE</option>
+            </select>
+            <br><br>
+            <hr>
+            <p>Extra Curricular : </p>
+            <label for="s">Sports</label>
+            <input type="checkbox" name="interset" id="s" value="Sports" ><br>
+            <label for="d">Dance</label>
+            <input type="checkbox" name="interset" id="d" value="Dance"><br>
+            <label for="si">Sing</label>
+            <input type="checkbox" name="interset" id="si" value="Singing"><br>
+            <label for="ac">Acting</label>
+            <input type="checkbox" name="interset" id="ac" value="Acting"><br>
+            <br>
+            <hr>
+            <button type="submit">Submit </button>
+            <button type="reset">clear </button>
+        </form>
+    </fieldset>
+</body>
+</html>

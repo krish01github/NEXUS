@@ -1,0 +1,64 @@
+** class 
+class class_name{
+    // Attributes 
+
+    class_name(){// constructor 
+
+    }
+
+    function methods(argu:datatype):datatype{
+
+    }
+}
+const objectName = new class_name(); // create object of class class_name
+// new : memory allocate in heap, its object so need to be in heap + without new it looks like function.
+
+** extends :: used with interface also
+class ne_class_name extends class_name,.. {
+    // this class have property of class_name also 
+    // create a object of ne_class_name having property of class_name
+}
+
+// public | private | protected , in js protected doesn't exist :: default -> public
+class class_name {
+    private // Attributes can only be used in this class 
+    protected // Attributes can only be used in this class + subclasses-extendsclasses
+    // constructor
+    private/public // methods()
+}
+
+** super call :-
+we know when Attributes of class is created it should be initialise in constructor, but for derived classes
+constructor won't generally have those Attributes so to initialise it we use super call
+super(Attributes,..); // will call parent class! 
+
+** generic : Template
+WHen any datatype value can be passed as parameter. So we aren't sure what datatype it is so instead of writing all
+datatype in (string|..) use generic :-
+    function function_name<T>(a:T):T{ //<T> indicate a datatype a & return type is T datatype
+        return a;
+    }
+    console.log(zalue(23));// optional : console.log(zalue<number>(23));
+    const jdid = <T>(a:T):T=>{ // arrrow function
+       return a;
+    }
+
+    Generic uses :- // you can also use multiple generic <T1, T2, ..>
+    interface name<T,Si>{
+        name:string,
+        age:number,
+        aadhar:T,
+        sal:Si
+    }
+    const onj:name<number,number>{
+        name:"rohit",
+        age:20,
+        aadhar:233,
+        sal:9832
+    }
+    const shsj:name<string,number>{
+        name:"rohit",
+        age:20,
+        aadhar:"hsus",
+        sal:number
+    }

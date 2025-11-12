@@ -1,0 +1,63 @@
+1. sizeof variable 
+    gives what is the datatype of that variable
+
+2. newvariable = DATATYPE(VARIABLE)
+    This do not mutate the original variable.
+    Functions like String(), Number(), and Boolean() convert a value to another datatype.
+    The conversion result is returned, but the original variable does not change unless you assign it.
+    If you don’t assign the result to a variable, the converted value is only used temporarily in that place.
+
+    NaN typeof is Number.
+
+    * String to NUmber :
+    Not all string character can be number, like a,b,c,@,$....
+    Error: 0/0 or If you try to convert character to Number then it shows NaN!!Not a Number
+    * Number to string :
+    All number can be string ! Never error.
+    * Boolean to Number :
+    true = 1 & false = 0
+    * null to NUmber :
+    answer : 0
+    * undefiened to Number :
+    answer : NaN
+    * Number,string,null,undefiened to Boolean :
+    all non-zero are true , 0 is converted to false. No initialization is also false(undefiened).
+    "any string" -> true & "" -> false. Thus empty string is 0 in number.
+    null and undefiened -> false.
+    * Boolean to string :
+    true -> "true" , false -> "false"
+    * null,undefiened to string :
+    null -> "null" & undefiened -> "undefiened"
+
+Operation :
+1.Arthematic : +,-,/,*,**,%
+2.comparision : ==,===,>,<,>=,<=, !=
+    * when >,<,<=,>= : number is the priority if different datatype is compared.
+    auto conversion null convert to number 0.
+    auto conversion undefiened to number NaN. null>=undefiened : false! can't be compared.
+    * when you compare string & number, Js will convert string to number then compare.
+        "" -> 0, empty string is 0.
+    * two string compared :1st char is compared based on ASCII value return true / false.
+    * Number & boolean compared : boolean converted to 0 or 1 .
+    * NaN==NaN : false.
+3.logical : &&, ||
+    * boolean we know!
+    * other datatype are Tried to convert to boolean then compare.
+    * "string1"&&"string2" -> string2, && check if first value is true then it check second if true returns 2nd value.
+     ""&&"string2" -> "" , first value is false so it don't check next condition. output empty string.
+     "string1"&&"" -> "" , first value true checks next condition which is false so return "".
+     10||20 -> 10, first value true so return first value.
+     0 ||10 -> 10, first value false return 2nd value by default.
+&, | : binary works!!
+
+// Js problem !
+let i = 0.1;
+let i1 = 0.2;
+let i2 = i+i1;
+console.log(i2);// 0.300000000000004?
+cause 0.1 or 0.2 isn't able to convert to binary exacctly so approx value is calculated.
+consider 0.1 as string -> "0.1" + "0.2" -> convert 1 & 2 number and add.
+
+* typeof null -> object.
+* null is loosely equal to undefiened. null==undefiened true. null===undefiened false. Rest it's not equal to any!
+

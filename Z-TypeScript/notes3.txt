@@ -1,0 +1,47 @@
+** Utility Types for objects
+1. Partial<Person>
+    Makes every property optional. update later allowed.
+2. Required<Person>
+    All property are requiered to fill out , just like default nature of object , update allowed
+3. Readonly<Person>
+    property you initialise can't be changed , only be able to read so no updation allowed.
+
+** Array of object :-
+#method1
+const arr:{name:string,age?:number}[] = [{name:"birh",age:20},{name:"kaand"}];
+#method2
+interface peo {
+    name:string,
+    age?:number
+}
+const ae:peo[] = [{name:"oie",age:234},{name:"pow"}];
+
+** Function in TS :-
+// default return datatype is void ! void is used when u don't return anything.
+// If argument datatype is not mention then its taken as any.
+// sepecify return type of function also.
+// optional parameter by adding '?' after arugment name.
+function hello(...arr){
+    let ans:number = 0;
+    arr.forEach(val:number => ans += val);
+    console.log(ans)
+}
+
+** Arrow in TS :-
+const why = (ap:number,pa:number):number=>{
+    return ap+pa;
+}
+console.log(why(23,34));
+
+** CallBack :: 
+type variable_name = (argument:datatype) => void; // same as => arrow function , only 1 line thats return
+type chill = (am:number)=>void; // allice 
+
+function placeorder(order: number, CallBack: (amt: number) => void): void {
+    const amt = order + 10;
+    CallBack(amt);
+}// CallBack_fun_name : (parameter:datatype) => return_datatype 
+placeorder(10, (amt) => {
+    console.log("done " + amt);
+});
+

@@ -1,0 +1,28 @@
+** Problem with Js that we needed TS :
+    1. variable can have any datatype 
+    2. object.key will never give error even if key don't exist // no key o/p undefined
+
+** datatype in TS :- should write the type of data 
+    var/let/const variable_name:datatype = ; 
+    * what u can write in Js you can write same in TS
+
+** BROWSER only understand : html , css , Js , NodeJs
+    So we need to convert it equalent  to Js code :: we have compiler for it !
+    npm install -g typescript //-g globally will show error -> sudo npm install -g typescript
+    sudo npm install -g typescript
+    // asks password give it
+    tsc --version
+
+
+** complie TS :-
+    tsc file.ts // will also create a .js which have is older version of js !
+    tsc file.ts --target es2016 // correct version but give error!
+    tsc --init // json for ts 
+    tsc // runs 
+
+** TS will show error for datatype but when you run it .Js wil update or convert to js!!
+    cause Ts code same as js code onlt TS will show the erorr.
+
+** tsc --watch // real time converion from TS -> Js as you keep writing in Ts 
+control + c // to exist this dynamic nature
+

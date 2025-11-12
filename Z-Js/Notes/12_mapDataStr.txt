@@ -1,0 +1,31 @@
+day 27 :-
+
+* map store in key value form. Key can be any datatype maybe object,array,boolean..
+* map looks like 2D array thus use forof loop
+    for (let [keys,value]  of mapname) { // [keys,value] 2D array so. keys will return first value in row & value will give second.
+        console.log(keys,"--",value);
+    }
+    for (let num  of mapname) {
+        console.log(num);// num is basically 1D array 
+    }
+
+syntax:-
+    const mapname = new Map([
+        ["ROhit",4], // first is key , second is value.
+        [45,"hello"],
+        [true,22],
+        [[10,30,20], "Mohit"]
+    ]);
+output:-
+    Map(4) {
+        'ROhit' => 4,
+         45 => 'hello',
+         true => 22,
+         [ 10, 30, 20 ] => 'Mohit'
+    }
+
+* Operation of MAP DS :-
+*mapname.set({name:"ewiix",age:20}, false); // key value pair
+*const a = mapname.get(key); // return the value of key
+*mapname.delete(key); // delete that key-pair 
+*const a = mapname.size;// return size of map.

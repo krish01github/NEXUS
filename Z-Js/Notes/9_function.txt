@@ -1,0 +1,66 @@
+day24 : variable can hold the function 
+
+* Method 1
+function function_name(parameter1, parameter2..){ // default value eg: parameter1 = 10
+
+}
+* better approach so u no need keep track of parameters : rest operator 
+function add(...num){ // create a array : and how many parameter sent put that in array
+    
+}
+** REST & SPREAD operator are different, rest used to catch value and keep in form of array.
+
+* method 2 : store function in variable : function keyword, const datatype, add1 variablename.
+const add1  =  function(...num){
+    let sum = 0;
+    for(let n of num)
+    {
+        sum += n;
+    }
+    return sum;
+}
+add1 // no output
+console.log(add1);//[Function: add1] , shows address/pass by ref, can be stored in variable.
+    a = add1; 
+    a();// will call add1 function.
+console.log(add1());//0
+console.log(add1(2,3));//5 
+
+** Difference between method 1&2 : 
+    method2 if you call the function before its body then it shows error.
+    method1 if you call the function before its body it execute.
+
+* method 3 : ARROW FUNCTION 
+const fun = ()=>{// function keyword removed => came
+
+}
+// if onnly u want to return value !
+// const j = (num1,num2)=> {return num1+num2;} instead.
+* const j = (num1,num2)=> num1+num2;
+// const j = (num1)=> num1*num1; only 1 parameter so use this instead.
+* const j = num1=> num1*num1;
+** array.sort((a,b)=>a-b);// a-b is returned auto 
+
+* return object directly.
+    * wrong : error 
+        const gret2 = ()=> { // it is treating {} as function part and not objects
+            name:"riht",
+            age:20
+        }
+        console.log(gret2());
+    * correct : make use of () -> return the thing written with-in ()
+    const gret2 = ()=> ({ // it is treating {} as function part and not objects
+        name:"riht",
+        age:20
+    })
+    console.log(gret2());
+
+* method 4 : immideatly invoked function 
+    wrap the function with-in () then use at end () : ()();
+* const l = (()=>{
+    console.log("hello");
+})();
+* (function greet(){
+    console.log("Hello ji");
+})();
+

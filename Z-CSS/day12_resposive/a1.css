@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* default */
+.container{
+    background-color: aqua;
+}
+
+/* css */
+
+@media screen and (max-width:500px){
+    .container{
+        height: 300px;
+        width: 300px;
+        background-color: rgb(34, 34, 56);
+    }
+}
+
+@media screen and (min-width:500px){
+    .container{
+        height: 300px;
+        width: 300px;
+        background-color: blue;
+    }
+}
+

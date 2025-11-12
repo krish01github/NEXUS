@@ -1,0 +1,16 @@
+** function like setTimeout is not a part of Js they are part of Web API.
+    Js doesn't understand setTimeout thus .
+
+** API :
+    set of rules to intract between client & servers.
+    client can be app, browser, Iphone. which are built different ways & built in different language so,
+    so to connect each other we need API with set of rules.
+
+    browser is multi-threaded so all method that are part web API given to browser & keep in callback Queue.
+
+    There are fixed rules that web API understand. SYntax!
+
+    * console.log() ,console.log() is a synchronous function — not an asynchronous Web API function like setTimeout, fetch, etc.
+        Thus it directly push in call stack.
+    * setTimeout() , web API count when time is over it send to callback Queue & when stack empty event loop push that to stack.
+        when time is 0sec then also first web API count & put in callback Queue.

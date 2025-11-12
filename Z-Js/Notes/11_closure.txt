@@ -1,0 +1,52 @@
+Day 26 
+
+** 3 Type of scope :
+* while using let & const 
+1. global - accessable to all!
+2. functional - only to that function!
+4. block - only within that block!
+* while using var
+1. global - accessable to all!
+2. functional - only to that function!
+4. block - can access anywhere just like global!!
+
+** create same name variable in different block. and tried to access then :
+    First local variable is accessed. 
+    Also block within block also can create same name variable as they are different from parent block.
+* Can't create same name variable in same block, global, function!     
+* eg : 2.js
+
+** in mainfunction() if you return subfunction() & subfunction ;
+    * if subfunction() is return.
+    const var = mainfunction(); // if subfunction doesn't return anything it returns undefined.
+    // if return something then var will have that value.
+    * if subfunction is return. same as return subfunction(){}.
+    const var = mainfunction(); // it will have the reference of subfunction. [function : subfunction]
+        var();// will call the subfunction
+    * eg : 3.js 
+
+* closure - a function that remembers variable from its outer scope even after outer function is done.
+Normally function is removed from stack after completely but 
+when reference is stored to execute function how is it able to access function block variable?
+    when return subfunction; // Code understand that its parent-function variable will be used so 
+    //it removes from stack-all variable,function..  & provide space in heap for those variable. thus we can access.
+    * eg 3.js 
+
+* Why use closure ?
+    To help dev so that they can't access variable directly! check condition and access using function.
+    making variable private so that user don't access directly.
+    but can access with function/methods. cause if we return the function reference which have access of variable.
+    * eg : 4.js 
+
+* Higher Order function :
+    function is returned in mainfunction.
+    function dou(v){
+        return function ex(c){ // pass reference!!! just like return ex;
+            return c+v;
+        }
+    }
+    const n = dou(20)(30); // n = 50? dou(20) return address of ex() & remember v value then 
+    //reference: ex(30) == dou(20)(30) -> so ex(30) return 50 to n !
+
+
+

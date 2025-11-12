@@ -1,0 +1,20 @@
+// used in syncro
+try{
+    // all promises
+}
+catch(error){
+    
+}
+
+finally{
+
+}
+
+
+// work as try{} in asynic
+.then((value)=>{
+
+})
+.catch((error)=>{ // used in asynic 
+
+})

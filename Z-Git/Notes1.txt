@@ -1,0 +1,55 @@
+Git - version control system.
+1. code update <->  web crash <-> revert back to original code.
+2. Owner ship of code. Time & who did!
+
+FOR GIT :- Install
+git config --global user.name "Your Name"
+git config --global user.email "Your.email@example.com"
+you can verfiy the configuration :
+git config --list
+
+git --version
+
+track that file :
+cd folderName // which folder to track
+cd .. // go out 1 step
+git init
+command+shift+. // to see that .git
+
+
+to check which file have modified:
+git status
+
+
+Gives what changes have been made : shows actual changes
+git diff // q to exit
+
+track those U symbol : U untracked : goes to staging area
+git add file.js // A 
+git add . // all file be started to get track
+// M modified
+
+
+Git commit : All history will be note down & maintained 
+git commit -m "My first code" // -m is message with commit 
+
+
+remove file from staging area :from  git add to remove it 
+get reset <filename>
+git restore --staged <file>
+
+
+git logs of commit:
+git log // shows all commit in reverse order
+git log --oneline // short form 
+git show <hash> // hash is the commit id  when log 
+
+revert changes:
+git reset --hard <hashCode> // go to remove commit/changes  , remove all after that hash.
+git revert <hashCode> // delete only that changes , rest after that and before that is unchanged.// merge conflict
+// git add .
+// git commit -m "" 
+
+** commit are depends on its previous version - branch is called master branch 
+    form like linklist head points the latest.
+

@@ -1,0 +1,29 @@
+* create element using react :
+    datatype name_ = React.createElement('tagName',{style : attribute},"content");
+
+* dom :
+    day1
+    // Warning for 18 model of react :: other button won't work untill request is complete.
+    ReactDOM.render(ele_which_we_need_to_render,In_which_element_it_should_render);
+    ReactDOM.render(ele,document.getElementById('root'));
+
+    day2
+    // better : first create root then render it : line 14 
+    datatype name_ = ReactDOM.createRoot(root_acting_element);
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(ele);
+    ** Still when u add ele in root then in root first other details will be removed first then add ele in root.
+    ** so use [] array in which you mention all yoou need to render at once !
+
+
+** Js is single therd so when user click something untill it render you can't use any other option.
+    but user would click smtg else without waiting for rendering.
+    Before React 18 This was a problem. UX problem.
+    * ReactRoot container have power to stop rendering if user click smtg else.
+        thus it can stop the rendering process and first let event happen!
+    SO react is also single threaded But have more power to choose which to execute.
+
+
+** jsx :- not part of js/react js 
+    Write code in normal html that will be converted into react element.
+

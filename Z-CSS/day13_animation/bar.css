@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(22, 21, 21);
+}
+
+.hello{
+    display: flex;
+    justify-content: center;
+}
+
+.con{
+    background-color: rgb(56, 41, 41);
+    border: 2px solid white;
+    color: aliceblue;
+    font-size: 34px;
+    padding: 10px;
+    width: 60%;
+    white-space:nowrap;
+    /* overflow: hidden; */
+}
+
+.box{
+    animation-name: move;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move {
+    from{
+        margin-left: 100%;
+    }
+    to{
+        margin-left: 0%;
+    }
+    
+}
+
+.container{
+    height: 100px;
+    width: 400px;
+    margin-top: 100px;
+    background-color: aquamarine;
+    display: flex;
+    padding: 10px;
+    gap: 5px;
+    overflow: hidden;
+}
+.box1{
+    /* margin-bottom: 50px; */
+    height: 100%;
+    width: 50%;
+    background-color: blue;
+    animation: updown;
+    animation-duration: 2s;
+}
+@keyframes updown {
+    from { transform: translateY(-100%); } /* start below */
+    to   { transform: translateY(0); }    /* slide up */
+  }
+  
+.box2{
+    height: 100%;
+    width: 50%;
+    background-color: rgb(59, 59, 106);
+    animation: downup;
+    animation-duration: 2s;
+}
+
+@keyframes downup {
+    from{
+        margin-top: 100%;
+    }
+    to{
+        margin-top: 0%;
+    }
+}

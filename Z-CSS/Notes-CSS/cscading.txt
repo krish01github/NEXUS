@@ -1,0 +1,14 @@
+Inline CSS
+
+*Inline styles (e.g., <div style="color:red">) have the highest priority among normal declarations.
+
+*Specificity (selector weight)
+The more specific the selector, the higher its priority:
+ID selectors (#id) > Class, attribute, pseudo-class selectors (.class, [attr], :hover) > Element/tag selectors (div, p).
+
+*If two rules have the same specificity, the one that appears last in the CSS
+
+*!important
+Giving it the highest priority
+
+!important > inline CSS > ID > class/attribute/pseudo-class > tag/element > ordering (last rule wins)

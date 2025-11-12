@@ -1,0 +1,105 @@
+Day22
+Array is not actually array in js. typeof array is object.
+Cause we can put heterogenus data in array!
+Array is mutabel. Array is passed by reference. so multiple array_name can point same array.
+
+* array_name.length
+    return size of array.
+* array_name[0index] 
+    return that index data. change value.
+* array_name.push(value,) // can push multiple value with separeted by ,
+    value -> number,boolean,string.. will pe added at end.
+* array_name.pop()
+    remove last data.
+* array_name.unshift(value)
+    value will be added at starting index-0 and shifts other data by 1 index.
+* array_name.shift()
+    first element will be removed. 0 index data removed then other shift other data towards 0th index.
+
+** for of 
+for(let num of array_name)
+{
+
+}
+
+* arr2  = arr1 ;// same array
+
+** const :
+* If we use const for array then array can not be completly changed but you can acces each element and change them.
+    address of array pointer should be same, so you can use method like push, pop, arr[index] and change value.
+* so basically you can't re-assign new array. else changes coulbe made in same array.
+
+** array_name.slice(2,4)
+    4th index not included. no change in original array.
+    return [ value-array_name[2] , value-array_name[3] ] , trimed can be assign to new array or printed.
+
+** array_name.splice(1,3,"rohit",19)
+    from 1st index 3 elements will be trimed out of original array.
+    ** "rohit" & 19 will be added in original array from 1ST Index after trim.
+    It can be assigned to new array_name completly new array. (trimed part).
+
+** spread operator :-
+    * syntax : newArray = 1array.concat(2array,3array...); //return new 1D array. typeof object as excepted.
+    return an array so we need to store. original array no changes. at a time multiple array concat.
+    * newArray = [1array,2array,,]; // return in 2D type array.
+    * newArray = [...1array,...2array,...]; // return in 1D type array just like .concat()
+
+** Use normal + to add to array :- STRING NOT ARRAY AS RESULT!
+    a = [1,3,4,5] , b = [6,54,32,1] // no change in original array.
+    * c = a+b;// c typeof is string. and not object(array).
+    c = 1,3,4,56,54,32,1 // separeted by ,
+
+** Array convert to string :-
+    we know how to convert string to array using .split("");
+    * syntax1 : string_name = array_name.toString(); // each string is separeted by ,
+    no change in original array. returned to new variable or directly printed. type string.
+    * syntax2 : string_name = array_name.join(" "); // by which separeation, here i put space.
+
+** search :- first index, last index, check if that data exist
+    * array_name.indexOf("searched_string_value"); // return 1st index when appear.
+    Cause if multiple same data exist in array then return 1st time appeared index. left
+    * array_name.lastIndexOf("value");
+    Cause if multiple same data exist in array then return last time appeared index. right
+    * array_name.includes();
+    true for exist, false for not exist.
+
+
+// Changes in original array don't return and new array.
+** sorting :- changes in original array only. Does'nt return new array. 
+    * syntax : array_name.sort();
+    according to ASCII table. So for string it's fine but numbers?
+    ** So if you try to sort number other than 0 to 9 then, 1st char of all values in array will compared and sorted.
+    let arr = [543,23,1233,43,90]; // treated : ["543","23","1233","43","90"]
+    arr.sort();// 1st char of each number is compared and sorted.
+    console.log(arr);
+    ** Cause : in Js array can have multiple datatype so fixed rule : ASCII.
+
+** sort - Numbers :-
+    array_name.sort((a,b) => a-b); // accending
+    for comparing 2 value we need : a and b if a-b is -ve then a will come first else b will come first.
+    // decending reverse or use this directly 
+    array_name.sor((a,b) => b-a);
+
+** reverse :- on original array.
+    * syntax : array_name.reverse();
+
+** falten the array :- on original array only not returning.
+    multiple dimension array 2D,3D. Can be converted into 1D by .flat()
+    * syntax : array_name.flat(); // 1 label flating 3D->2D and 2D->1D
+    * syntax : array_name.flat(n); // n label, n = ..Infinity-if don't know how many label.
+    return new array or print directly. no change in original array.
+
+** array is objcet !
+    const a = [10,309,"krish",9.3,true];
+    a.name = "rohit";// key:value pair
+    console.log(a); //[10,309,'krish',9.3,true,name : 'rohit']
+    console.log(a["0"]); // 10
+
+** array Destructure :- index wise
+    array_name = [1,2,3,4];
+    const [var1,var2,,var3] = array_name;
+    // var1 = 1, var2 = 2, var3 = 4
+    ** // rest operator
+    array_name = [1,2,3,4];
+    const [var1,var2,...var3] = array_name;
+    // var3 will keep rest [3,4] in form of array 

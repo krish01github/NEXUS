@@ -1,0 +1,35 @@
+Repo : https://github.com/krish01github/GitLearning.git 
+
+Already should have commited !
+
+* make this link name as origin for understanding
+git remote add origin https://github.com/krish01github/GitLearning.git
+
+* change your branch name to other name :: rename name!
+git branch -M main
+
+* push your work to github :: origin is the link of repo :: -u means first time you are pushing 
+git push -u origin main // main branch 
+git push // when it's not first time ur pushing the branch.!!!!
+
+** when created new branch we make changes then we have to push branch by -m branch_name
+    BUT changes don't happen immediatly on repo.
+    To merge it :: pull resquest PR -> create pull request -> review -> confime merge 
+    merge conflict should be resolved manuualy if occured.
+
+** pull request after updating on github || bring the code from github to my code :: be on main branch 
+git pull origin main
+
+** check all branches 
+git branch -r
+
+** delete branches :- mannual in github or use this command
+git push origin --delete bugfix
+
+** stash :-
+git stash
+git stash list
+git stash apply
+git stash apply stash@(1)
+git stash pop
+git stash clear

@@ -1,0 +1,48 @@
+* nested object :-
+const user = {
+    name:"rohit",
+    0: 20, // to access this use user[0] or user["0"]
+    surname: "negi",
+    greeting: function(){
+        console.log(`Hello! ${user.name}`);
+        return 20;
+    },
+    address: {
+        city:`ruis`,
+        state:  `ello`
+    }
+}
+
+    * access :-
+        user.address.city 
+
+* HOW TO MAKE COPY NOT reference :-
+    *const new_obj_name = {...obj_name}; // independent copy!
+    ** But only one label !! nested label are reference only and not copy.
+    *const new_obj_name = structuredClone(obj_name);
+    ** This will create a completly new obj copy!!! But it still can't clone functions,DOM nodes, class instances, error object.
+
+* Array also in form of object :-
+ index are key,
+ arr = [1,2,3,4];
+ 0:1, 1:2, 2:3, 3:4
+
+* Object store in memory :-
+    stack -> Map- element pointer -> array
+    stack -> Map- property pointer -> object
+    stack -> Map- Map pointer -> new Map()// let m = new Map() //if keys are same for multiple datasets
+| Action | Syntax       | Example                |
+| ------ | ------------ | ---------------------- |
+| Create | `new Map()`  | `const m = new Map();` |
+| Add    | `.set(k,v)`  | `m.set('key',1)`       |
+| Get    | `.get(k)`    | `m.get('a')`           |
+| Check  | `.has(k)`    | `m.has('a')`           |
+| Delete | `.delete(k)` | `m.delete('a')`        |
+| Size   | `.size`      | `m.size`               |
+| Loop   | `for...of`   | `for([k,v] of m){}`    |
+| remove | `.clear()`   | `m.clear()`            |
+
+
+
+
+

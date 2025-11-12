@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Grouping Form into single unit</legend>
+        <br>
+        <form action="">
+            <label for="name">Name : </label>
+            <input type="text" name="UserName" id="name">
+            <br><br>
+            <label for="fathername">Father's Name : </label>
+            <input type="text" name="UserFatherName" id="fathername">
+            <br><br>
+            <label for="age">Age : </label>
+            <input type="number" name="UserAge" id="age">
+            <br><br>
+            <label for="password">Password :</label>
+            <input type="password" name="UserPassword" id="password">
+            <br><br>
+            <label>Gender : </label>
+            <label for="male">Male</label>
+            <input type="radio" value="MALE" name="UserGender" id="male">
+            <label for="female">Female</label>
+            <input type="radio" name="UserGender" value="FEMALE" id="female">
+            <label for="others">Other</label>
+            <input type="radio" name="UserGender" value="OTHERS" id="others">
+            <br><br>
+            <label>Subjects :</label>
+            <label for="sub1">C++</label>
+            <input type="checkbox" value="C++" name="Subject" id="sub1">
+            <label for="sub2">Maths</label>
+            <input type="checkbox" name="Subject" value="Maths" id="sub2">
+            <label for="sub3">Java</label>
+            <input type="checkbox" name="Subject" value="Java" id="sub3">
+            <br><br>
+            <button>Submit</button>
+        </form>
+    </fieldset>
+</body>
+
+</html>
+
+<!-- We didn't give anything for name="" for age  -->
+<!-- http://127.0.0.1:3000/Z-HTML/day5/form.html?UserName=weew&UserPassword=23 -->
+
+<!-- This information goes to backend -->
+
+<!-- Radio gives on/off as output so use value="" -->
+<!-- http://127.0.0.1:3000/Z-HTML/day5/form.html?UserName=krish&UserFatherName=jieo&UserAge=12&UserPassword=909sdxas&UserGender=on -->
+<!-- http://127.0.0.1:3000/Z-HTML/day5/form.html?UserName=iowejd&UserFatherName=sdncjd&UserAge=12&UserPassword=iwejdoi2323&UserGender=MALE -->
+
+<!-- Check box multiple name="" used -->
+<!-- http://127.0.0.1:3000/Z-HTML/day5/form.html?UserName=krish&UserFatherName=ksis&UserAge=12&UserPassword=89239hdwhd&UserGender=MALE&FirstSubject=C%2B%2B&ThirdSubject=Java -->
+<!-- Same name="" used -->
+<!-- http://127.0.0.1:3000/Z-HTML/day5/form.html?UserName=ejoiew&UserFatherName=hed&UserAge=23&UserPassword=woihedoi2332&UserGender=MALE&Subject=C%2B%2B&Subject=Java -->

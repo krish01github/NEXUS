@@ -1,0 +1,41 @@
+** Js is a single threaded synchronous language, one task at a time in sequence.
+* Other task will stop working if any other task is already in process.
+
+BUT 
+setTimeout(()=>{
+    console.log("hi");
+},5000)
+console.log("bye);
+// output :- how cause first bye got printed!
+bye
+hi
+
+setTimeout() is called
+→ JS sends this task to the Web API (in browsers) or C++ API (in Node.js).
+→ The timer starts outside the main thread.
+JS continues executing
+→ The next line console.log("bye") runs immediately.
+So "bye" is printed first.
+After 5 seconds,
+the Web API sends the callback ()=>console.log("hi") to the Callback Queue.
+Event Loop checks if the Call Stack is empty.
+Once all synchronous code is done, the event loop pushes the callback into the stack.
+Finally, "hi" gets printed.
+
+** WEB API :- Function Call | multi threaded |
+    window oject created by browser- global object , gives us web API access.
+    browser is multi threaded.
+    ** callback Queue : all callback Function is stored in Queue.
+        * event loop : it checks if stack is empty or not if empty then push the 
+            callback Queues stored functions to stack.
+        when stack is empty then push callback to stack then stack execute it.
+        like :-
+        setTimeout,setInterval,setImmediate (Node.js),I/O callbacks (like file reading),requestAnimationFrame (Browser),
+        fetch, DOM - eventListner, console all are part of web API. 
+    ** micro callback Queue : higher priority so event loop checks first micro Queue.
+        High priority task like fetch, promise,  
+
+** call stack :- all instruction stored
+** 2 phase we learnt => store then exectue phase!! 10_jsRunCode.txt
+* Js never wait!!
+

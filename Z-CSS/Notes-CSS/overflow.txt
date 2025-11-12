@@ -1,0 +1,16 @@
+*overflow: ;
+    1) hidden , hide the content.
+    2) scroll , give to to scroll the content.
+    3) auto , if scroll is reqiered it will add else default.
+
+- overflow-x: scroll; will add a horizontal scrollbar.
+- overflow-y: hidden; will clip any vertical overflow.
+
+*Yes, absolutely — a child can go out of its parent because of margins.
+
+*Auto parent → top/bottom margins usually collapse, not overflow.
+*Fixed parent → large margins can push child outside → real vertical overflow.
+
+white-space: nowrap;
+    It will not wrap to next line even if it overflows.
+    in parent.

@@ -1,0 +1,21 @@
+* To fit the website in all devices.
+
+syntax :-
+@media screen {}
+
+*screen, all content we want is to be shown on screen only.
+*print, no one uses but it was used when we wanted to print web on paper.
+
+*and 
+    used to add another condition.
+
+*(max-width:600px){} , when it hit 600px or below.
+*(min-width:600px){} , when it hit 600px or above, kam-se-kam
+
+css rule applys, (remember cascading)first default then check condition of @media.
+
+*desktop-based : max-width
+    default-desktop > tablet > mobile.
+*phone-based : min-width [most used approach - load less cause only default will run]
+    default-phone > tablet > desktop
+

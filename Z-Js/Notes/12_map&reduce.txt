@@ -1,0 +1,26 @@
+day27 : map method 
+
+** .map() is a JavaScript array method used to:
+Iterate over each element in an array
+Transform (modify) each element according to a callback function
+Return a new array containing the results of those transformations
+It always returns a new array of the same length as the original.
+
+** const arr = [9,39,4,53,2,54];
+console.log(arr.map((num)=>num*2));// value is directly returned
+console.log(arr.map((num)=>num>24));// num>24=true or false thus true/false will be returned.
+
+** array having object in each index , we can't distrub size of array but can make changes in object.
+let ans = arrayName.map((arrayName)=>({key1:arrayName.key1, key2:arrayName.key2}));
+
+** reducer :- Iterate over array and give 1 value 
+    *accumulater = initalial sum = 0, value returned in callback that goes to accumulater.
+        ✅ At the first call,
+        JavaScript sets
+        accumulator = initialValue → here it’s 0.
+    *current_value - current index value of array traversal.
+    *syntax :- 
+        let x = product.reduce((accumulater,currentPrice,index,arr)=>{
+            return accumulater+currentPrice.price;// currentPrice is object so choice sub choice by .key
+        },initalial_value_of_accumulater) // generally 0 so ot is number , else as string addition/concatination
+

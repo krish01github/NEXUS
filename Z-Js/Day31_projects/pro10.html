@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading Animation Once</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+    overflow: hidden; 
+    /* hide scroll during animation */
+  }
+
+  /* --- Loading Screen --- */
+  .loader {
+    position: fixed;
+    inset: 0;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    animation: hideLoader 1s ease 2.5s forwards;
+    /* 👆 wait 2.5s, then fade out over 1s */
+    z-index: 1000;
+  }
+
+  @keyframes hideLoader {
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  /* --- Main Content --- */
+  .content {
+    opacity: 0;
+    animation: showContent 1s ease 3s forwards;
+    /* 👆 start showing after loader hides */
+    text-align: center;
+    padding-top: 100px;
+  }
+
+  @keyframes showContent {
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+</head>
+
+<body>
+  <div class="loader">Loading...</div>
+
+  <div class="content">
+    <h1>Welcome to My Website</h1>
+    <p>This is your main page after the animation finishes.</p>
+  </div>
+</body>
+</html>

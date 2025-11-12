@@ -1,0 +1,21 @@
+h1{
+    height: 100px;
+    width: 300px;
+
+    background-color: orange;
+
+    border-style: dotted;
+    border-radius: 12px;
+    border-width: 5px;
+}
+h2{
+    border-left: solid ;
+    padding: 2px;
+}
+
+p{
+    background-color: aqua;
+    margin: 42px;
+    padding: 3px;
+    border : 5px solid black ;
+}

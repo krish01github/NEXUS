@@ -1,0 +1,77 @@
+DOM :-
+Document object Model.
+
+HTML element -> Js element/object :-
+    <!-- temp = {
+        tagName: "h1",
+        id: "id_no_1",
+        background_color:"yellow",
+        color:"green"
+        text-content:"I am Krish"
+    }
+    temp.textContent = "I am Rohit negi"-->
+
+    * typeof temp = object.
+    * But we don't need to convert to object cause we have command that convert it to object.
+      object have many different property not just which you applied.
+
+** window is global object! created by browser.
+* window.alert("Hello");
+* console is a part of window
+    window.console.log("huih");
+* it is not necessary to use window!! It will understand that we have to attach window!
+    const temp = window.document.getElementById("id_no_1");
+    const temp = document.getElementById("id_no_1");
+
+** document 
+* have complete html file.
+* console.dir(document); // give entier document in object form!
+
+** we traverse DOM mannualWay or use document.getElementById("");// will make object of that idName tag.
+
+** temp.textContent , temp.innerHTML , innerText gives same output ?
+    - temp.innerHTML , will entier inner in text formate + all tages inside it + if written in next line shows in next line.
+        Is dangerous cause if tags are put in the string html will treate the string as tag only.
+        day29 : data is robbed cause server request they can take your token and they get urs user&password & UI can be changed.
+    - temp.textContent , will give only text + also gives out text that are hidden/display none. Ignore tags and trate them as text.
+    - temp.innerText , wil give only text wriiten in tags (no inner tag or no display none text). Only on UI same.
+
+live :
+    Auto update, thus we can create and remove directly
+Static :
+    Will update but not automatically.
+
+* return html collection, If the DOM changes, the collection automatically updates.
+* className based selection, tag based selection returns us html collection or multiple element.
+* className based selection can be converted in to array by :- const arr = [...temp]; // cause multi-select
+
+* return element ,
+* id based selection, static no changes live.
+
+* return node list, If the DOM changes, it does not update automatically.
+* querySelector("tagName"); // will select first tag only
+* querySelector("#first"); // css way 
+
+* querySelectorAll("tagName"); // node list formate,  return nodelist.
+    const arr = [...nodeList]; // cause multi-select
+
+* we can give id for tag from Js.
+
+| Method                           | Example                                   | Returns        | Array?         | Notes           |
+| -------------------------------- | ----------------------------------------- | -------------- | -------------- | --------------- |
+| `getElementsByTagName("li")`     | `document.getElementsByTagName("li")`     | HTMLCollection | ❌ (array-like) | Live collection |
+| `getElementsByClassName("name")` | `document.getElementsByClassName("name")` | HTMLCollection | ❌ (array-like) | Live collection |
+| `querySelectorAll("li")`         | `document.querySelectorAll("li")`         | NodeList       | ❌ (array-like) | Static snapshot |
+
+
+| Feature             | HTMLCollection                                   | NodeList                                   |
+| ------------------- | ------------------------------------------------ | ------------------------------------------ |
+| Returned by         | `getElementsByTagName`, `getElementsByClassName` | `querySelectorAll`, `childNodes`           |
+| Type                | HTMLCollection                                   | NodeList                                   |
+| Live?               | ✅ Yes                                            | ⚠️ Usually No                              |
+| Contains            | Only HTML elements                               | Can contain any node (text, comment, etc.) |
+| Index access        | ✅ Yes (`[0]`)                                    | ✅ Yes (`[0]`)                              |
+| `.forEach()` method | ❌ No                                             | ✅ Yes (in modern browsers)                 |
+| Convert to Array    | `[...collection]` or `Array.from(collection)`    | Same                                       |
+
+

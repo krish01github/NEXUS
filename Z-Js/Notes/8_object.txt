@@ -1,0 +1,83 @@
+Day23
+
+syntax : 
+datatype obj_name = {
+    key: value,
+    ...
+}
+
+copy by reference!
+
+* access each value by :-
+    syntax : obj_name.key
+* insert new key,value pair in object :-
+    syntax : obj_name.newKey = value;
+* update :-
+    syntax : obj_name.existing_Key = value;
+* delete key,value pair :-
+    syntax : delete user.existing_Key;
+
+HOW IS KEY STORED ?
+- As a string. Keys can be string or symbols
+    const va = Symbol("id");
+    const obj_name = {
+        key: value,
+        [va]: "heloo" // put [] to say don't treat it as string but symbol
+    }
+    console.log(obj_name[va]);//heloo
+- obj_name["key_name"] is equant to obj_name.key_name
+- normally space is not allowed in key eg : const o = {your name : "krish"} XNOT ALLOWED.
+  so use :-   const o = {"your name" : "krish"} // now you can create and access
+  also accessing can be done by obj_name["key_name"] this method only cause other method space not allowed.
+
+* print key
+    syntax : Object.keys(obj_name); // create  a array ans store all keys print/store
+* print value
+    syntax : Object.values(obj_name); // create an array
+* print both
+    syntax : Object.entries(obj_name); // 2D array [key,val]
+
+* for in 
+for(let num in obj_name)
+{
+    //num are keys
+    //obj_name[num] are value!
+    //why not obj_name.num -> undefined? cause it search literally num in obj_name
+}
+* for of directly on Object not possibelly, only for array.
+for(let key of Object.keys(obj_name))// can iterate over value,entries also!
+{
+
+}
+
+* Destructure :-
+    const var1 = obj_name.keyName1;
+    const var2 = obj_name.keyName2;
+    * Instead of this do :- Here vraiables name should be same as key.
+        * const {keyName1,keyName2} = obj_name;
+        if you want user-defined name Instead of keyName
+        * const {keyName1:var1,keyName2:var2} = obj_name;
+
+* function in object :-
+    const user = {
+        greet : function(){
+            console.log("Hello!");
+            return 20;
+        }
+    }
+    // access
+    let var = user.greet();// run function, also if any return value return here. var = 20
+
+* this keyword :-
+const user = {
+    name:"rohit",
+    age: 20,
+    surname: "negi",
+    greeting: function(){
+        console.log(`Hello! ${this.name}`);// otherobject.name from other object{}
+        // this refers to user cause function is called reference to user!
+        // which object calls the function that object is reference to this!!
+        return 20;
+    }
+}
+let va = user.greeting();

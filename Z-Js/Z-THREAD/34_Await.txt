@@ -1,0 +1,95 @@
+Even if just promise is better than callback hell sometimes it doesn't make sense & difficult to understand.
+
+why asynic await needed??
+Eg : just promise return by function , promise have parameter reqier by next function. 
+    we know all function could be asynic cause they may take there own time so we have to use promise.
+    placeorder(cart)
+    .then(order=>prepar(order))
+    .then(foodDetail=>pickUP(foodDetail))
+    .then(dropLoc=>deliver(dropLoc))
+    .catch(error=>console.log(error)); // used in asynic only.
+
+    But we like this better : but can not use due to asynic behaviour.
+    const order = placeorder(cart);
+    const foodDetail = prepar(order);
+    const dropLoc = pickUP(foodDetail)
+    deliver(dropLoc);
+    * BUt can't use it cause of asynic behaviour of Js so we use asynic await !!!
+
+**** So use await --> untill we get argument it don't run the function!
+    ** But you can't use await like this !
+    const order = await placeorder(cart);
+    const foodDetail = await prepar(order);
+    const dropLoc = await pickUP(foodDetail)
+    deliver(dropLoc);
+
+    ** Use await like this within async function! 
+    awiat -> 1.js
+    async function functionName(){
+        const order = await placeorder(cart); // freez untill value is returned.
+        const foodDetail = await prepar(order);
+        const dropLoc = await pickUP(foodDetail)
+        deliver(dropLoc);
+    }
+    functionName(); // function call 
+
+    ** await can't be used in open , only in async function only !!
+
+**  Always work sequentially !!!
+    await,  promise not in function 
+    if same promise is run again :- which means promise is resolved thus it don't wait directly give same o/p as for previous
+    const prom = new Promise((resolve,reject)=>{ // as soon as program run this starts execting 
+        setTimeout(()=>{
+            resolve("Hello");
+        },3000)
+    })
+    async function name1(){
+      const data = await prom; // await works as .then()
+      console.log(data);
+      const data1 = await prom; //  don't wait give same output as data cause promise is already resolved
+      console.log(data1);
+    }
+    name1();
+
+**  await, promise not in function --> 2.js + (try-catch-finally used in syncro)
+Both Promises started at the same time, so the second one finishes “alongside” the first.
+When you await them sequentially, only the first await actually causes waiting time.
+code is written out/globally so Both promises started in parallel, browser is multi-thered.
+const p1 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve("Hello i take 3 sec to run");
+    },3000)
+})
+const p2 = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve("2nd i don't take time cause i take same time as p1");
+    },3000)
+})
+async function name1(){
+    const data = await p1; //  3sec , always goes in sequentially!!!
+    console.log(data);
+    const data1 = await p2; // no time it runs cause it also takes same time to resolve as p1 !
+    console.log(data1);
+}
+name1();
+
+different b/w await & .then()
+***** “if you use .then().then() → whichever .then() gets its return value first, that one runs first, not necessarily sequentially.”
+
+
+-- Await, Promisein function ---3.js
+* multiple return promise takes separete time indivisually.
+* if we want it to execute parallely :- insead of 3.js use this 
+    datatype [var1,var2] = await Promise.all([function1(),function2()...]);
+    // return 2 value from 2 promises . both value comes at once + so largest time is taken of all promise function.
+
+
+*** async function always return a promise only!! even if you return smtg like string that is converted to promise.
+    if nothing is return undefined is the promise!
+4.js
+async function name(){
+    return "hello";
+}
+name().then(value=>console.log(value)); // hello
+
+

@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+    background-color: black;
+}
+
+.cont{
+    position: relative;
+    background-color: aqua;
+}
+
+.box{
+    height: 100px;
+    width: 180px;
+    background-color: antiquewhite;
+    position: absolute;
+    animation-name: moving;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-direction:alternate-reverse;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes moving {
+    from{
+        background-color: antiquewhite;
+        top: 10px;
+        left: 10px;
+    }
+    to{
+        background-color: rgb(155, 96, 19);
+        top: 10px;
+        left:200px;
+    }
+}

@@ -1,0 +1,38 @@
+*flexbox only for 1D but grid is for arrangement in 2D layer.
+
+*Grid is basically 2D Matrix.
+
+*display: grid; , in parent div.
+
+*grid-template-rows: px px ..; , no of px decides number of rows the parent will have
+*grid-template-columns: px px ..;  , no of px decides number of columns the parent will have
+
+*gap : ; 
+    in parent style to give margin between each child.
+    *row-gap: ; & columns-gap: ; 
+    to give margin for row & columns separtly.
+
+*Problem : child div may overflow :
+    *making use of fraction (fr). So, now it won't come out of parent div. also number difines what is the fraction/size of each div.
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    *Attribute : if there are multiple also x is the fraction of each div takes : repeat(number_of_times_fr  ,  x_fr)
+
+*Like in table rowspan & colspan : grid-column-start, grid-column-end, grid-row-end, grid-row-start.
+    /* 4-1 = 3rows is occupied, row merge */
+    .box6{
+     grid-column-start: 1;
+     grid-column-end: 4;
+    }
+    /* sidebar/column merge */
+    /* 4-2 = 2col is occupied */
+    .box2{
+        grid-row-start: 2;
+        grid-row-end: 4;
+    }
+
+    *SHORT CUT :
+    grid-column: x/y;
+    grid-row: x/y;
+    * To keep at exact position make use of both grid-c & grid-r .
+

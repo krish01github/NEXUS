@@ -1,0 +1,100 @@
+
+10. Tables : 
+<table></table> : Table defined 
+10.1 <caption></caption> : Table caption/heading 
+    Attribute <table border="1"> :
+      *border="" give solid border for table.
+10.2 <thead></thead> : Table heading is defined
+10.3 <tbody></tbody> : Table body is defined 
+    Table head&body is different block so, rowspan in head won't occupy in body.
+10.3 <tfoot></tfoot> : table footer
+10.4 <tr></tr> : table row, defines new row cause we fill data row wise.
+10.5 <th></th> : heading data, generally used in table heading.
+10.6 <td></td> : for every table data.
+    Attribute <td rowspan="" colspan="">
+    *rowspan="2" : cell will occupy 2 rows 
+    *colspan="2" : cell will occupy 2 column 
+
+11. Semantic tages 
+* div : a conatiner not a Semantic.
+header | nav | main | footer
+<nav></nav> : link to new webpages.
+
+12. <section></section> : used to divide your webpages into different parts
+*id to section :To scroll on a single page when used in anchor tage.
+Why id : so that each section is uniquely identified.
+
+13. class & id
+*class : 
+    Used for grouping datas.
+    same can be given to multiple tages
+    to access class in style/css use : .className {}
+*id : 
+    element : tag + its content
+    unique for each element.
+    to access id in style/css use : #idName {}
+
+14. Emmet : short-cut
+ * : multiple number of same tages needed.
+ > : left is parent tag right side will be child tag
+    child tag will be within parent tag.
+ ^ : climb-up/come-out of parent tag.
+ + : multiple tages at once no-child-parent relation.
+ $ : when using *,give numbering to class/id we use $ which will keep changing by *n [0 to n].
+ @number : used with $, to start numbersing from [number,n+number].
+ # : id
+ . : class
+ {} : For writing normal text on webpage. 
+eg : parentTag>childTag.childTagClass
+eg : 
+div+div>p>span+em^^bq
+<div></div>
+<div>
+    <p><span></span><em></em></p>
+</div>
+<blockquote></blockquote>
+
+
+15. 
+    <from action=""></form>
+        Attribute
+        *action="" : server_url, where our submit form goes.
+    <fieldset> : Helps in grouping the form into single unit.
+        <legend></legend> : used inside fieldset tag, to write text on fieldset border.
+    </fieldset> 
+    <lable for="" ></lable>
+        Attribute
+        *for="" : whatever is in for same in id of input, so when u touch lable curson clicks the input.
+    <input type="" placeholder="" id="" name="" value="" required></input>
+        Attribute
+        **required : compulsary input.
+        *placeholder="" : Greyed-out hint text shown inside the input box until the user types something.
+        *name="" :unique if only one option or if among multiple option we are choicing one,
+                  then we have to give same name for the block of multiple option we have eg : radio.
+                  For checkbox with multiple option selection often uses name_arrays[].
+                  Name of the field sent to the server when the form is submitted.
+        *value="":Sets the default value of the input which is sent to backend by name=value.
+                  If the user changes it, the new value will be sent to the server when submitted.
+        *types="":text,number,email,password,date,checkbox,radio,file,range,color,......
+        *min="" : minimum value eg:date
+        *max="" : maximum value eg:date
+    <select name="" id="">
+        Attribute
+        *select tag : used for drop option
+        *option tag : used to show multiple option in drop down
+        *value="" in option : used to send value selected by user to name="" of select tag.
+         cause same like radio user isn't giving any infomation that can be sent to backend but just selecting.
+         So when selected an option only that option tag will return value from value="" to name="" of select tag.
+        
+        <option value=" ">
+            <option value="" disabled selected>__</option> : 
+            Attribute
+            *disabled selected :when you just want to show in drop down but don't want user to select it.
+            *disabled :you can't select nor it will be shown.
+        </option>
+    </select>
+    <textarea rows="" cols=""></textarea> 
+        Attribute
+        *rows="" : number of rows
+        *cols="" : number of columns
+    <button></button>

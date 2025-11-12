@@ -1,0 +1,72 @@
+syntax :
+* let variable_name:datatype = ;
+
+* let x = ; // x datatype is with what it's initialized
+
+** any_unknown.ts
+*1 let variable_name; 
+  let variable_name:any;
+    datatype -> any , you can put any datatype ! behave just like Js variable!
+*2 let variable_name:unknown; // same like any ! but safe cause you can't perform operation on unknown directly!
+    If you want to operation on unknown variable  then we have to first check condition on variable then operate.
+
+
+** non-primitive datatype!
+*1 array -> *let/const variable_name:datatype[] = [];// datatype :: string,number
+    if let a = [1,2,3] // compiler says its type  number 
+    if let a = [1,"string",90] // string|number compiler says:: | is uninun
+    *syntax for 2 datatype of an array :: let variable_name:(number|string)[] = [];
+        other than that datatype it shows error!
+
+*2 tuple - fixed number of elements , its similar to array 
+    We already know in which order the data will come & there datatype!
+    * let/const variable_name:[string,number] = ["hello",34];
+    1st string 2nd number & if more than the specified gives error
+
+*3 object - *4, *5
+    let obj = {
+        name: ""; //name:string ,if not mention transpliser will auto understand
+    }
+    * let obj:{name:string,age:number}{
+        name:"keirh",
+        age:34
+    }
+
+*4 type 
+    Alises - we pre-define a object with setOf key-and its datatype then create a object & add its property
+    type variable_name = {
+        name:string,
+        age:number,
+        id:string
+    }
+    let newvar:variable_name = {
+        name:"",
+        age:,
+        id:""
+    }
+
+*5 interface - best way to holding object datatype , cause it helps to merge muultiple interface.
+    muultiple time we can declare interface with same name meaning same interface & it get merge.
+    interface variable_name{
+        name:string,
+        age:number, // can use , ; or just go newline
+        pos:string
+    };
+    interface variable_name{
+        ip:string
+    };// allwoed
+    let newvar: variable_name = {
+        name:"",
+        age:,
+        id:""
+    };
+
+* someTimes we don't want to use those specific key-pair or it may be optional in that case use 
+    interface n{
+        name?:string,
+        age:number
+    }
+    const a:n = {
+        age:23 // name is optional , thus no error !!!
+    }
+

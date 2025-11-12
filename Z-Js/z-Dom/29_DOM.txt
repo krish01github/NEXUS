@@ -1,0 +1,56 @@
+Day 29
+crud : create , read- access or retrieve, update-modify element content/attribute, delete/remove element
+
+** To create a element/htmlTag using Js.
+    document.createElement("tagName"); // tagName -> h1,h2,p,....
+
+** apply the new element to web 
+    ElementName.insertAdjacentElement("afterbegin",newElementName);// old ways!
+    newElementName.after(ExistingElementName); // newElementName which is created by js
+    newElementName.before(ExistingElementName); //ExistingElementName, already exist in web we aaccess it using varibale.
+    * if we have list ul,ol 
+        newElementName.append(ExistingElementName,..);// newElementName will be child of ExistingElementName,append back/dowm
+        newElementName.prepend(ExistingElementName,..);// newElementName will be child of ExistingElementName,append from front/top
+        newElementName.children[1].after(ExistingElementName);// access the 2nd child/ index 1 then insert the new element after 2nd child.
+
+** className , element.className = "class_name";
+    This is a bad practice cause if we do this again in code
+    element.className = "class_name_1"; // then class_name will be removed
+    * but we know a tag can have multiple classNames.
+    * so use :-
+        element.className += " class_name_1"; // give space before adding new class_name_1 or else it concatinate.
+    * or use this :- better approach
+        element.classList.add("class_name_1");
+        element.classList.add("class_name_2");
+        element.classList.add("class_name_3");... works!
+    * menu.classList.toggle("hidden"); //toggle is not property of menu ! if it has a class it remove it !
+        The method .classList gives access to all the element’s CSS classes.
+        .toggle("hidden") does:
+        If menu has class hidden → it removes it.
+        If it doesn’t have class hidden → it adds it.
+
+** remove class :-
+    element.classList.remove("class_name_2");
+
+** .remove();
+    element.remove(); // will delete that element/html tag completly
+
+** add style/css using Js :- 
+    element.style.background-color = "pink";
+    element.style.color = "white";
+    element.style.fontSize = "20px";
+
+* return attributes of element.
+    element.getAttribute("id);// return id name of element
+    element.getAttribute("class");// return class name of element
+
+* set attributes
+    element.setAttribute("attributeName","value");
+
+** fragment :
+    const frag_name = document.createDocumentFragment();// can store new elements.
+    frag_name.append(newElementName); // will add newElementName to fragment.
+
+    now fragment can be appended to parent html tag directly no need of loop.
+    element.append(frag_name);
+

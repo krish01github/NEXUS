@@ -1,0 +1,47 @@
+DAY20 :
+1. variable.toFixed(n); // n = 0,1,2,3,4,...
+    This method help to show only n numbers after decimals also round off as reqiered.
+    .toFixed() return string. so typeof variable.toFixed(n) is string.
+    Temporary if not assigned.
+    
+2. variable.toPrecision(n); // n = 1,2,3..
+    This methods help to shows only n number in total whole+decimals also round off as reqiered.
+    .toPrecision() return string. so typeof variable.toFixed(n) is string.
+    Temporary if not assigned.
+
+3. variable.toString();
+    Convert number to string.
+    Temporary if not assigned.
+
+4. new // new keyword, we can create number but it's typeof will be object.
+    Help us create number as object. 
+    BAD WAY! cause == : COMPARING of object means both should point same memory LOCATION then only both are equal.
+
+5. Math
+    1. Math.abs(n); // n = ..-3..0..+1..
+        convert to non-negative number.
+    2. Math.PI;
+        Gives pi value.
+    3. Math.LN10;
+        Log10 base e value.
+    4. Math.SQRT2;
+        sqrt root of 2.
+    5. Math.ceil(n); // n = whole+decimal number.
+    6. Math.floor(n);// n = whole+decimal number.
+    7. Math.log10(n);
+       log base 10
+    8. Math.max(n1,n2,n3....);
+        return Max value.
+    9. Math.min(n1,n2,n3....);
+        return minimum value.
+    10. Math.random();
+        return value n which is between 0<=n<1.
+        Math.random()*10; // 0<=n<10
+        (Math.random()*totalNumberOutcomes)+shift; // shift<=n<shift+totalNumberOutcomes
+        (Math.random()*max-min+1)+min; // shift<=n<shift+totalNumberOutcomes
+        ** It don't actually generate random number. Seed -> time !
+        * Time keeps changing thus we take or pass time as input for random thus some maths can be used and generate output.
+        * so same time same random number. Thus random() isn't safe!
+        ** So we make use of Crypto : seed -> cursor_corridenate + ram_used + heat_of_cs + ...random events generate a number.
+        
+

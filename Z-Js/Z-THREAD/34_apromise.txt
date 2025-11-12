@@ -1,0 +1,57 @@
+GitHub 30 users details : https://api.github.com/users : array which has 30 object 
+
+day34 1.js
+const variable = fetch('') // used to fetch data and store in varibale // asyncronus task!!
+
+** .json() // is a asyncronus task and return a promise!
+    every language understand .json()
+    every key in json key should be in "" , no undefined can be use , no function can be used.
+
+** convert js object to json()
+    const j1 = {
+     name:"Rohit",
+     age: 55,
+     aaa: "idont knwo"
+    };
+    const jsonformate = JSON.stringify(j1); // JSON.stringify(object_name);
+    console.log(jsonformate);   
+
+** how to make json 
+    const jsson = '{
+     "name":"Rohit",
+     "age": 55,
+     "aaa": "idont knwo"
+    }';
+    // convert to js object 
+    const jsObj = JSON.parse(jsson); // .parse(json_name);
+
+** .catch(err=>{
+    err.message;// return error message string from server not mannual
+})
+** case when sever don't work : dns server down, internet down, server down! only!!
+** if server respose thus promise is fullfilled but does't return anything. Failed due to wrong link but still server works but no data.
+    .then(Response=>{
+        if(Response.ok)// if its false then server --> sever says its an error !
+        {
+
+        }
+        else[
+            throw new Error("Error ");
+        ]
+    })
+    .catch(error=>{
+
+    })
+
+** const a = new Promise((resolve,reject)=>{
+    // resolve(ans);
+    // reject(error);
+})
+a
+.then(arg=>{})// arg is ans.
+.catch(arg=>{})// arg is error
+
+
+** .finally(()=>{ // always work !! like loaders which always exist .
+
+})

@@ -1,0 +1,129 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.screen{
+    height: 100vh;
+    background-color: rgb(58, 52, 52);
+    border-radius: 5%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+/* rotation */
+.circle{
+    height: 800px;
+    width: 800px;
+    border-radius: 50%;
+    background-color: rgb(32, 43, 62);
+
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation-name: rotat;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+
+
+@keyframes rotat {
+    from{
+        transform: rotate(0deg);
+        /* transform: rotate(0deg) translateX(200px) rotate(0deg); */
+    }
+    to{
+        transform: rotate(360deg);
+        /* transform: rotate(360deg) translateX(200px) rotate(-360deg); */
+    }
+    
+}
+
+.sun{
+    height: 10%;
+    width: 10%;
+    background-color: orange;
+    position: absolute;
+    border-radius: 50%;
+
+    box-shadow: 0px 0px 150px 60px red;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation-name: rota;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    transition: all 3s;
+}
+.sun:hover{
+    background-color: orangered;
+}
+@keyframes rota {
+    from{
+        transform: rotate(0deg);
+        /* transform: rotate(0deg) translateX(200px) rotate(0deg); */
+    }
+    to{
+        transform: rotate(-360deg);
+        /* transform: rotate(360deg) translateX(200px) rotate(-360deg); */
+    }
+    
+}
+
+.earth{
+    height: 10%;
+    width: 10%;
+    background-color: rgb(95, 133, 247);
+    position: absolute;
+    transform: translate(100px);
+    border-radius: 50%;
+}
+
+.mars{
+    height: 10%;
+    width: 10%;
+    background-color: rgba(15, 118, 10, 0.918);
+    position: absolute;
+    transform: translate(300px);
+    border-radius: 50%;
+
+}
+
+.moon{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(240, 248, 255);
+    border-radius: 50%;
+
+    animation-name: moonor;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+
+}
+@keyframes moonor {
+    from{
+        rotate: 0deg;
+    }
+    to{
+        rotate: 360deg;
+    }
+}
+.act{
+    height: 15%;
+    width: 15%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+}
+

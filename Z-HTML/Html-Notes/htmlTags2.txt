@@ -1,0 +1,42 @@
+16. Audio : not a slef-closing tag
+Syntax 1:
+<audio controls>
+    Attribute
+    *controls : gives UI for control of audio.
+    <source src=""> : self-closing tag.
+        Attribute
+        *src="": Link for audio file. Multiple can be added if 1st don't work next one is played .
+    *If no-audio play can give normal text in audio tag that will only appear if no audio is played else doesn't appear.
+</audio>
+Syntax 2:
+<audio src="" controls></audio>
+    Attribute
+    *src="": Link for audio file. only 1 src of audio can be added.
+    *controls: give UI for controling the audio.
+
+
+17. video : You can't play other source vedio eg: youtube..
+Syntax 1:
+<vedio src="" height="" width="" controls>
+    Attribute
+    *controls : gives UI for control of audio.
+    *src="": Link for vedio file. only 1 src of vedio can be added.
+Syntax 2:
+<vedio height="" width="" controls autoplay muted>
+    Attribute
+    *controls : gives UI for control of audio.
+    *autoplay muted: autoplays the vedio but muted only.
+
+    <source src="" type="video/mp4">
+    Attribute
+    *src="" : Link for vedio file.Multiple src of vedio can be added.
+    *type="" : It is to mention the type of vedio.
+</vedio>
+ 
+
+ 18. iframe : can play other source vedio on our site eg: youtube..
+ <iframe src="/embed/" frameborder="0" allowfullscreen>
+    Attribute
+    *src="" : source of vedio. [before last 11 char/vedio id use /embed/]
+    *allowfullscreen : allows full sreen 
+ </iframe>

@@ -1,0 +1,18 @@
+Day27
+
+// value is nessasary BUT index,entierArray is optional.
+* // only values
+arrayName.forEach((number)=>{
+    console.log();
+})
+* // value index
+arrayName.forEach((number,i)=>{//i = index
+    console.log();
+})
+* // value index entierArray
+arrayName.forEach((number,i,a)=>{ // a = array
+    console.log();
+})
+
+forOf 
+forIn used in object 

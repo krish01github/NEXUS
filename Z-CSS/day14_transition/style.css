@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 800px;
+}
+
+.box{
+    margin: 30px;
+    height:150px ;
+    width:150px ;
+    background-color: aqua;
+    /* transition-property: all;
+    transition-duration: 3s;
+    transition-timing-function: ease-in; */
+    transition: all 3s;
+}
+
+.box:hover{
+    /* background-color: blueviolet;
+    height: 300px;
+    width: 300px;
+    cursor: pointer; */
+    transform:scaleX(2) ;
+    transform:translate(100px, 100px);
+    transform: rotateY(90deg);
+    /* transform: skew(20deg); */
+}

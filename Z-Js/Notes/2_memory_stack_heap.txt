@@ -1,0 +1,64 @@
+* every application is in form of code in HD/ssd, thus code will go to RAM and cpu will run the code.
+* ssd/Hd are very slow. RAM is fast so it don't directly run run from ssd/Hd.
+* RAM can transfer the data to cpu very easily.
+
+If you have N address lines (bits), you can access 2^N addresses.
+16 bytes memory → 2^4 Address → 4 address lines  
+32 bytes memory → 2^5 Address → 5 address lines  
+
+* RAM :- STACK  & HEAP :
+    *STACK size is very less maybe in kbs or mb.
+        Fixed datatype data can be put in STACK.
+        Also address is of fixed size.
+    *HEAP size bigger maybe in mbs or gb.
+    Garbage collector is used to free Heap!
+        Un-fixed datatype can be stored in HEAP.
+        String datatype can be changing its length thus not Fixed. 
+
+* Overcome STACK & HEAP Drawback!: 
+    Store address of HEAP in STACK. Where He 
+
+1 byte = 8bits
+1 KB = 1024 bytes
+1 MB = 1024 KB = 1,048,576 bytes
+1 GB = 1024 MB = 1,073,741,824 bytes
+2³² bytes = 4,294,967,296 bytes ≈ 4 GB
+
+* 32bit os register size 32bits processor can handle data&instruction 32bit/4bytes wide in one operation, 64bit os..
+** address size in 32bits os is 4byte FIXED. address size in 64bits os is 8byte.
+
+* address size ?
+    A 32-bit OS means the CPU uses 32 bits for memory addresses.
+    With 32 bits, the CPU can form 2³² different addresses.
+    Max memory=2^32 bytes=4,294,967,296 bytes = ~4 GB
+    Each address points to 1 byte of memory (since memory is byte-addressable).
+
+* Memory in JS :-
+All data is stored in HEAP cause in js we can't update the data.
+We find new memory space in HEAP and that memory location is stored in stack.
+boolean,null,undefined are fixed in HEAP memory. 
+so it multiple let VARIABLE points same memory location in HEAP.
+
+* Heap-Garbage collector : data will be removed which is not pointed. It is done by js itself.
+
+* Using for loop iteration will make program slow cause finding free location & create memory will take time.
+32bits :
+    * solutioin 1: pre-create a memory space (Array). Address of starting memory stored in stack.
+    Each time iteration happens-position where new data is stored (Array), 
+    memory address in stack gets incremented by 4/8bytes. 
+* Solution 2 — No pre-created array; bit-level encoding
+Don’t allocate array in advance.
+Use address computation and a bit flag to decide whether the value is raw data or a pointer to heap data.
+31 bits for data → last bit used as a flag.
+If last bit = 0 → it’s raw data stored directly.
+If last bit = 1 → it’s a pointer, so go to heap to read the data.
+Formula for address calculation (when last bit = 0):
+Address=Base Address+(Index×sizeof(data))
+Address=Base Address+(Index×sizeof(data))
+Why last bit matters:
+In a 32-bit system, addresses are normally aligned to 4 bytes (multiple of 4), so the last 2 bits are unused and can be repurposed as flags.
+You use one of those bits to store whether it’s data or a pointer.
+Heap allocation condition:
+If data is too large (> +2³⁰ - 1 or < -2³⁰) → it’s stored in the heap because it doesn’t fit in the 31-bit space.
+Store a pointer to the heap location with last bit = 1 to differentiate.
+64bits : learnt!

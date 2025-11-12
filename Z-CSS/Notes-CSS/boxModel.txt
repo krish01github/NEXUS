@@ -1,0 +1,28 @@
+content < padding < border < margin 
+
+*padding : top right bottom left;
+*padding : top bottom;
+    Distance between border and content
+*margin :  top right bottom left;
+*margin : top bottom;
+    Distance between two different elements border.
+
+Applicable for content : height : ; && width : ;
+
+border : border-width border-style border-color;
+border-right: ;
+border-left: ;
+border-bottom: ;
+border-top: ;
+border-radius: ;
+
+* box-sizing : ;
+    *default is content-box; 
+        Total height & width is of content alone.
+    *border-box;
+        Total height & width includes border,padding,content. NO MARGIN.
+
+*inlineblock
+Baseline alignment remains stable unless text alignment/wrapping changes due to padding.
+If one element’s text wraps to 2 lines, then its baseline is at the bottom of the second line → so that element appears lower.
+If padding makes the content area look taller/shorter, it creates the illusion that one box is “jumping up or down,” but really the baseline is untouched.

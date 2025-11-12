@@ -1,0 +1,29 @@
+* We know server returns html,css,js. So server can understand Js.
+
+* Why Js was created?
+    -cause other language were hard. So devloper wanted a better programming language.
+    -Security Nightmare, when c++ is runed c++ can access you system cause its a low level language.
+
+* In Js if it wants to access anything of user it will ask permission first.
+
+* Interpreter : line by line code is run.
+
+* Complier that runs Js , 
+* Chrome : v8 Engine.
+* In firefox : spiderMoonkey complier.
+
+* v8 Engine : To un Js!
+    Code written C++ machine code . Who takes input as JS and generate output.
+    So we also need c++ compiler so where is c++ compiler and how does it runs.
+    Our System (os) can understand our machine code so our browser v8 Engine is in machine code.
+
+* C++ is machine dependent. 
+    Every os will convert machine code according to its system, same machinecode won't work on other os system.
+
+
+* NodeJS- to run js on our vscode : has v8 Engine which is our C++ machine code
+    It is our Runtime enviroment.
+
+
+* node -v : gives version
+* node main.js : to run the js code

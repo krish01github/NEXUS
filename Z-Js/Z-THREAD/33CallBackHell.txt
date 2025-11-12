@@ -1,0 +1,14 @@
+// Callback HELL
+placeorder(()=>{  // A new function that, when called, will call prepar()
+    prepar(()=>{
+        deliver();
+    });// can pass multiple argument
+});
+
+const a = ()=>{
+              prepar(()=>{
+                  deliver();        
+              });
+           }
+when a is called then it auto run the function prepar();
+

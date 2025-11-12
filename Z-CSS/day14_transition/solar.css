@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.con{
+    height: 100vh;
+    background-color: brown;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    height: 800px;
+    width: 800px;
+    background-color: blue;
+    position: absolute;
+    border-radius: 50%;
+    /* so the div will be 50vh */
+    /* top: 50%; */
+    /* so div will be 50vw  */
+    /* left: 50%; */
+
+
+    /* so starting will be 50vh and 50vw , which isn't exactly center. cause div have hight and width */
+    /* my box 50% hight & width */
+    /* transform: translate(-50%, -50%); */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation-name: rotat;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+.earth{
+    height: 100px;
+    width: 100px;
+    background-color: green;
+    animation-name: rotata;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotat {
+    from{
+        transform: rotate(0deg);
+        /* transform: rotate(0deg) translateX(200px) rotate(0deg); */
+    }
+    to{
+        transform: rotate(360deg);
+        /* transform: rotate(360deg) translateX(200px) rotate(-360deg); */
+    }
+    
+}
+@keyframes rotata {
+    from{
+        /* transform: rotate(0deg); */
+        transform: rotate(0deg) translateX(200px) rotate(0deg);
+    }
+    to{
+        /* transform: rotate(360deg); */
+        transform: rotate(360deg) translateX(200px) rotate(-360deg);
+    }
+    
+}

@@ -1,0 +1,72 @@
+Day 30;
+
+STEPs 
+* event : mouse move,click,double click.
+* event Listener : listening to the event! decide which listen we want to listen to!
+* event action : perform the action.
+
+* not prefered method. 
+IN HTML tag:
+onClick = "function_name()"
+In Js:
+function function_name(){
+}
+
+* good but yet not best ,only in Js. cause multiple event , last event will override previous one!
+const variable = document.getElementById("idName");
+variable.onclick = function function_name(){
+    h22.textContent = "Good moring";
+}
+
+* best cause we can apply multiple event to one tag. multiple can get called cause its function not value.
+const ht = document.getElementById("th");
+ht.addEventListener('mouseover',()=>{
+    ht.textContent="lorem fdiu efiuuei";
+    ht.style.backgroundColor = "pink";
+})
+        * .addEventListener()// is a function, 2 parameter - 'event' , ()=>{all chages} are passed.
+
+* There are many events!! expore.
+eg : click, mouseenter, mouseleave, mousemove, dblclick, keydown(any keyboard), input..
+.. change(when you click out of current element it gets triggers- if no changes trigger won't get exixuted), 
+.. focus (doesn’t bubble- it need to directly attach to indiviual element)-(we get value)
+.. focusin (this will bubble) -(on which foues goes that will get triggered)
+.. focusout (leave that element it gets trigger )
+.. submit (type=submit in button- page gets refress - so memory get released- so console get refress)
+.. reset (type=reset in button all values get reset not refress)
+
+* way to make changes it by going from main/root/parent container to there child nodes.
+eg :
+const parent = document.getElementById("pare");
+for(let child of parent.children){
+    const a = child;
+    child.addEventListener('click',()=>{
+        child.textContent = "I am clicked";
+    })
+}
+BUT BEST APProACH is bubbling.
+--30_bubbling.txt 
+* remove addEventListener
+// make  a user-defined function so .remove & .addEventListener have same memory location.
+function hanle(e){
+    e.target.textContent = "I am chicked";
+    parent.removeEventListener('click',hanle);
+}
+parent.addEventListener('click',hanle);
+const x = e.clientX; // x axis location
+const y = e.clientY;// y axis location on screen
+element.style.left = `${x}px`; // from left xpx
+
+* form : put addEventListener in form to access everything in form.
+e.target.value // gives the value input
+e.preventDefault();// it won't get auto refresh
+if 10000 input so,
+    use FormData
+        const data = new FormData(form);// all data in data variable store in key,value pair
+        Array.form(data.keys()); // all keys in array form , can find all values. can use forof loop.
+        for(let key of data.keys()){}// name is key, value is value
+        for(let [key,value] of data.entries()){}// name is key, value is value
+
+
+
+

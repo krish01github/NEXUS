@@ -1,0 +1,38 @@
+Day21 :
+
+UTC time : same for all places!!
+
+How to get current date : time is taken from our device.
+method 1 :
+* datatype now = new Date();
+console.log(now);  // UTC time!
+console.log(now.toISOString()); // UTC time
+console.log(now.toString()); // Our device time in string style! 24hr
+console.log(now.toLocaleString()); // India/location formatted style. 12hr clock
+
+// According to Local Time
+console.log(now.getDate());
+console.log(now.getDay()); // 1 to 7
+console.log(now.getTime());
+console.log(now.getMonth());// 0 to 11
+....
+
+// year,month, date, hour, min, sec, millisec
+// month 0 to 11, days 1 to 7/
+method 2 :
+const newnow = new Date(2025,8,20,8,23,12,234).getTime(); // in millisec
+* const newnow = new Date(2025,8,20,8,23,12,234);
+Bad output : 2025-09-20T02:53:12.234Z
+    time has gone back! 
+    changes in month(0index so output add +1)-hr&min(utc time)
+    year and sec be same as input.
+
+method 3 :
+* datatype now = Date.now(); // UTC in millisec.
+console.log(now); // now output is in millisec.
+* datatype newnow = new Date(now); // UTC formate Time
+datatype newnow = new Date(-23456789); // UTC formate, millisec time before 1st jan 1970.
+* millisec started from 1st jan 1970. datatype newnow = new Date(0);
+console.log(newnow); // India time output
+
+** brower auto convert to local date to user when UTC time is passed.

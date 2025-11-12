@@ -1,0 +1,54 @@
+*Used in automating Layout! , 1Dimensional Layout only.
+
+*parent/container & child relation is important for flexbox.
+
+*display:flex;
+    will make its child element tobe inline element.
+    But it will cover entire height of parent container untill height of child is mentioned.
+
+    But parent will remain block only.
+    default direction of flex is row.
+*flex-direction: ;
+    column,row-reverse,column-reverse.
+
+*flex-direction dicide the main axis & other as cross axis.
+
+*justify-content: ; main axis changes only!!
+*align-items: ; cross axis changes only!!
+    when flex-direction is row : horizontal/main & verticcal/cross.
+    when flex-direction is column : vertical/main & horizontal/main.
+    center, space-around(margin introduced eg: 10px div 10px 10px div).
+    start, end, space-between(first & last goes to start & end, mid equal space ).
+    space-evenly(equal distance between any two div).
+
+*resposive :
+    *flex-wrap:no-wrap; , default
+    *flex-wrap:wrap; , when content is compressed it goes to next line.
+    *flex-wrap:wrap-reverse; , last divs remain in first line starting divs goes to new line.
+
+*gap :
+    In parent :- gap: px; (Horizontal)will be given in between childs. No need to separtly give margin to childs.
+
+** Along the main axis, margins do affect spacing.
+Example: in a row layout, margin-left / margin-right push flex items apart.
+Along the cross axis, things are trickier:
+Flex items are aligned by align-items or align-self.
+Vertical margins (margin-top, margin-bottom) don’t push siblings apart like in block layout.
+**child css property :
+
+*flex-grow: int_val ; , default 0
+    Controls how extra space is distributed.
+    If extra space exist it will be occpied by the child div according to int_val.
+
+*flex-shrink:int_val; , default 1
+    decrese the div with int_val times compare to normal div with default 1.
+    CSS property flex-shrink: 1 is default.
+    This means: when children overflow the parent, the browser proportionally reduces their size so they fit inside.
+
+
+*flex-basis : px; , changes of main axis so it depends on flex-direction.
+    main axis will change even if u have already given main-width/heigh.
+    priority will be given to flex-basis
+
+*align-self: ;   , apply on cross axis.
+    to algin particular div separtly from all others.

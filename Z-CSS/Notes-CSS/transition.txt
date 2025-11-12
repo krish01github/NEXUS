@@ -1,0 +1,56 @@
+** transition : 
+
+.classname{
+    /* when hover then changes occure immidiately but with adding transition we can decide how&when changes will hapen*/
+    transition-property: ;
+        write on which prperty the changes showuld occur.
+    transition-duration: ;
+        total time taken for the transition.
+    transition-timing-function: ;
+        to control speed distribution of transition-duration.
+    transition-delay:;
+        Time delay before changes starts.
+    transition: property duration timing-function delay;
+}
+
+.classname:hover{
+    ...All changes
+}
+
+
+
+** Difference between transition & animation :
+    animation automatically works, but transition needs to be triggered.
+
+** Transform : 
+    It helps to not distribution aligment of other neighbor divs.
+    Changes can only been to applied div.
+
+*Transform  CAN BE WRITTEN DIRECTLY IN 
+.classname{}
+
+.classname:hover{
+    transform : ;
+        ** 2D 
+        * scale(x) , allow to to grow x times the actual div.
+            scaleY() , scaleX()
+        * translate(x-axis , y-axis) , move the div in x & y axis.
+            if used % then the div's hight&width n% is the movement.
+        * rotate(30deg) , rotate 30 degree 2D way direction 
+            
+        * skew( deg) , used to tilt the div at 90deg won't be visible 90+ but less than 180 it shows inverted.
+            skewX() , skewY()
+        
+
+        ** 3D 
+        * translateZ() , movement is in z-direction which is 3D. But noting will visible on translate-z.
+            In parent css use , perspective : px; then we can see z-direction Changes, coming towards us / growing .
+        * rotateX() , in x-direction/backwards.
+        * rotateY() , in y-direction/right turn.
+
+}
+
+* perspective : px; 
+    from how far we are seeing thats number px.
+    Me and screen distance is px. 
+

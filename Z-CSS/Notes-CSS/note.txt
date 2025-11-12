@@ -1,0 +1,41 @@
+* inline & internal & external(can be used for multiple html page)
+class : used for grouping multiple tags with same className.
+id : for uniqely selecting.
+, : using common we can group based selection.
+
+* COLOR : 
+1) rgb(red0to255_,green0to255_,blue0to255_, alpha/transpareny_50% is normal) : 3byte 8*8*8 bits.
+2) #r_g_b_ : hexdecimal(0 to f).  same,3bytes/24bits.
+3) hsl(0, 100%_intensity , 50%, 0to1_transparency): A fully saturated, normal lightness red.
+
+* font-size :  
+- px (Pixels): An absolute, fixed-size unit. font-size: 16px; means the text will be exactly 16 pixels tall. Good for consistency, but less flexible for users who want to change 
+    their browser's default font size.
+- em: A relative unit. 1em is equal to the font size of the **parent element**. If a parent <div> has a font-size of 16px, then font-size: 2em; on a child <p> will make it 32px (16 * 2).
+- rem (Root Em): **The modern standard.** This is the most flexible and recommended unit. 1rem is equal to the font size of the **root <html> element**. This allows you to set a base 
+    font size on the <html> tag, and then all your other font sizes can be relative to that one single value, making it incredibly easy to scale your entire site's typography.
+- vw & vh : my visible width&height, n% of width screen.
+- % : my direct parent elements n-% size.
+*In CSS, whenever you use a percentage value for margin or padding (whether it’s top, bottom, left, or right), the reference is always the parent’s width, never its height.
+
+* FONT :
+font family :- use google font
+generic familes-> serif, sans-serif, monospace, cursive, fantasy.
+font-weight : 100 to 900;
+font-style : italic;
+
+* INLINE :
+occupy only requiered space.
+Won't allow height&width.
+Horizontal (left & right) → works as expected, pushing content left/right.
+Vertical (top & bottom) → visually applies, but does not push other elements away.
+
+* BLOCK :
+always starts from new line, take up entire width space.
+Allows hight&width&padding&margin.
+
+*DISPLAY: INLINE-BLOCK ;
+It will act like inline but allows changes in hight,width,margin,padding like block.
+
+*DISPLAY :
+To convert block to inline :- display : inline;

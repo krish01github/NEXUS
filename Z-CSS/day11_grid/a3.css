@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: black;
+}
+
+.container{
+    display: grid;
+    height: 800px;
+    width: 800px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:  1fr 2fr 2fr 1fr;
+    gap: 3px;
+
+}
+.box{
+    background-color: aliceblue;
+}
+.box1{
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.box6{
+    /* 4-1 = 3rows is occupied */
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+/* sidebar */
+.box2{
+    /* 4-2 = 2col is occupied */
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+.box3{
+    grid-column-start:2 ;
+    grid-column-end: 4;
+}

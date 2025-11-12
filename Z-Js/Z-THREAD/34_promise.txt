@@ -1,0 +1,73 @@
+**  fetch() which is asyncronus task. 1.js
+    return promise,  fetch takes time but if you don't wait and console directly then it shows promise{<pending>}
+
+** const obj = fetch('https://api.weatherapi.com/v1/current.json?key=0bef1045da94499d9e9143432252710&q=London&aqi=yes') // return object
+    setTimeout(()=>{
+        console.log(obj); // this will return object 
+    },2000)
+    2.js
+    ** but what will you keep time , cause there are many reason like more time requier, server issues...
+    ** So u can't use setTimeout !!
+
+** 3.js
+    syntax :- ** imp
+    datatype variable = fetch(''); // variable === promise object!!!
+
+    // If value came then only .then() works 
+    variable.then((argument)=>{ // .then have a callback function
+        // use the argument ,argument is the Response object returned by fetch()
+    })
+
+
+* // if value don't come due to some error then .catch() will catch the reason for error.
+    variable.catch((error)=>{ // error is the argument that shows why request was not fullfilled.
+        console.log(error); // due to payment, more than free usecase,
+    })
+
+** promise have 3 state 
+    1.pending - promise{<pending>}
+    2.resolve(data-actual data) - .the()
+    3.reject(data-why rejected) - .catch()
+
+** .json() for body! 3.jss
+Method1
+    variable.then((argument)=>{
+        // argument will give header part ! to get body part DO argument.json()
+        console.log(argument.json()); // gives promise { <pending> } 
+        ** datatype variable2 = argument.json();
+            variable2.then((argument2)=>{
+                console.log(argument2); // gives the body part  
+            })
+    })
+Method2 
+    const variable2 = variable.then((argument)=>{
+        return argument.json();
+    })
+    variable2.then((argument2)=>{
+        const.log(argument2); // gives body part
+    })
+Method3 - uses Method2 : promise chaining , variable = fetch('');
+    variable.then((argument)=>{
+        return argument.json(); // no need to put bracket + no return cause only 1 line -> cause arrow function
+    }).then((argument2)=>{
+        const.log(argument2); // gives body part
+    }).catch(error=>console.log(error)); // no need to put bracket + no return cause only 1 line -> cause arrow function
+
+** .catch()
+    promise_variable
+    .catch(error=>console.log(error));
+
+** in a function(parameter) { // function that return promise then on that promise we can call other function
+    *** datatype var = new Promise(function(resolve,reject){ // 1st argument for .then & 2nd for .catch !!!
+        // if resolved
+        resolve(order); // goes to .then()
+        // if error / doesn't satisfy condition
+        reject("message for rejection"); // goes to .catch()
+    })
+    return var;// return promises
+}
+
+function(parameter)
+.then(order=>another_function(order))
+.then()
+.catch();

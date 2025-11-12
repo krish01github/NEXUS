@@ -1,0 +1,70 @@
+
+HTML : hyper text markup language
+
+1.Heading :Use heading tag h1,h2,h3,h4,h5,h6 in order thats a good habit.
+  search engine checks heading for better search.  
+2.Paragraph 2 types : <p></p> && <pre>as written in .html</pre>
+3.lorem : Unnessary words created to check how it looks on webpage.
+4. <hr> : create a lines horizontal , as to separate parts in webpage.
+5. <br> : next line 
+
+6. List : 
+6.1 <ul> </ul> - unordered List
+    Attribute <ul style=""> : 
+       *style="list-style-type: ;" {none,circle,square,disc}
+6.2 <ol> </ol> - order List - Follow order 
+    Attribute <ol type="" start=""> : 
+       *type=" " {a,A,i,I} //alphabet count, Roman count
+       *start="10" //starts count from 10
+6.3 <li> </li> - List Item - common for both to mention items.
+ 
+7. Ancore Tag - travel through web-pages, display is inline by default.
+<a href="link.com"> visible_name </a> 
+    property <a href="" target="">:
+       *target="_blank" //To launch link in new webpage, default self.
+
+8. Image : self-closing tag
+<img src=""> 
+    Attribute <img src="" height="" width="" alt="">:
+       *height=""
+       *width=""
+       *alt="" //If image don't render display a text which is in alt=""
+   * Absolute path 
+   Complete Address : Works for everyone : 
+   photo can be anywhere in computer its address starts from root directary.
+   Absolute path/Address : photo->get_info->properties->location
+    But It won't work from our pc Cause other can access internal-drive-access but we can use from web!! 
+   * Relative path
+   Current place to final destination with in main file only.
+   src="./" & src="../"
+   Sing le dot means: look here, in the current folder
+   Double dots mean: go back, one level up to the parent folder
+
+9. Boiler Plate :
+    
+    computer only understand numbers/binary so all data are converted to binary.
+    UTF-8 ? directary.
+    All data of our site is converted  into binary.
+    We know ASCII have 256 char only but world there are many languages and there char.
+    So we use UTF-8, where binary is converted to UTF-8.
+    UTF-8 isn't fixed size but varies. For example :
+    English -> 1Byte/8Bits represented
+    Latin -> 2Bytes represented
+    Hindi, chines -> 3Bytes represented
+    emoji -> 4Bytes represented
+
+    How do we decide to read file, Cause file is in binary ? could be 1,2,3,4 bytes represented.
+    READ 1Byte/8-bit if first bit is 0 then its english. If not 1 then
+    First 3bit 110 -> read 2Bytes/16Bits at once.
+    First 4bit 1110 -> read 3Bytes at once.
+    First 5bit 11110 -> read 4Bytes at once.
+
+    How IMAGE is stored ? How will it converted to binary ?
+    Image is nothing but rows*columns of pixel.
+    Every pixel store color information thus forming a image.
+    Using RGB we can make any color. 
+    24Bit 8 bits for Red + 8 bits for Green + 8 bits for Blue = 24 bits total per pixel.
+    Color combinations: 2⁸ × 2⁸ × 2⁸ = 16,777,216 colors.
+    48Bit give more clear images. Color combinations: 2¹⁶ × 2¹⁶ × 2¹⁶ = 281 trillion colors.
+
+

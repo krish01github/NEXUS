@@ -1,0 +1,94 @@
+https://www.notion.so/Web-Development-Course-25b3a78e0e2280919c1ed15f0878fa15
+
+IP Address
+IP (Internet Protocol) Address**: A unique number that identifies a device on the internet.  
+
+- Dynamic IP: Each time you connect to the internet, your ISP (e.g., Jio, Airtel) assigns you an IP.  
+  When you disconnect, it can be reassigned.  
+
+---
+
+## Types of IP
+
+- Public IP: Unique globally; assigned to your router by ISP.   
+- Private IP: Used inside local networks, unique within that network.  
+
+  - Large corporations → `10.0.0.0 – 10.255.255.255`  
+  - Medium networks → `172.16.0.0 – 172.31.255.255`  
+  - Home/common use → `192.168.0.0 – 192.168.255.255`  
+
+* Within local server : we can transfer data with only MAC address.
+## IPv4 vs IPv6
+
+- IPv4: 32-bit, written as `x.x.x.x` (0–255 per block).  
+  Total ~4.3 billion addresses.  
+- IPv6: 128-bit, supports virtually unlimited devices (`2^128`).  
+
+---
+
+# DNS (Domain Name System)
+
+DNS converts **domain names** into **IP addresses**.  
+
+1. Browser Cache Check → Browser checks if IP is already stored locally.  
+2. Recursive DNS Server → Provided by ISP or public DNS (Google DNS, Cloudflare). Stores recently requested IPs in cache.  
+3. Root Server → 13 main clusters worldwide. Points to the correct **TLD server** (e.g., `.com`, `.org`).  
+4. TLD Server → Directs the query to the domain’s **Authoritative Server**.  
+5. Authoritative Server → Contains the actual IP of the domain. Sends it back.  
+6. Return to Browser → Browser gets the IP and connects to the website’s server.  
+
+---
+
+# Server Slow Case
+
+- Your IP (from ISP/router) is **unique while you’re online**.  
+- If you disconnect, the IP may later be assigned to another user.  
+- If the server is slow and still processing your request, it continues using your **original IP + MAC address**.  
+- Your request never “goes to another computer,” even if the same IP is later reassigned.  
+
+---
+
+# MAC Address
+
+- **MAC (Media Access Control) Address**: Hardware/physical address of your device; unique globally.  
+- Each network interface (Wi-Fi, Ethernet, Bluetooth) has its own MAC.  
+- Ensures your request is uniquely tied to your device.  
+- Example: **Airdrop** works using MAC addresses.  
+- Format: 48-bit, hexadecimal (e.g., `00:1A:2B:3C:4D:5E`).  
+
+**Check:**  
+- macOS/Linux → `ifconfig`  
+- Windows → `ipconfig /all`  
+
+---
+
+# Ports
+
+- **Port Number**: Tells the system which application should receive the data.  
+- Useful when multiple apps/tabs are open → ensures the right app gets the right response.  
+- Format: 16-bit (`0–65535`).  
+
+Port Ranges
+- Well-known (0–1023):
+  - FTP → 21  
+  - SSH → 22  
+  - DNS → 53  
+  - HTTP → 80  
+  - HTTPS → 443  
+- Registered (1024–49151): Used by software vendors (not public).  
+- Dynamic/Private (49152–65535): Commonly used for temporary connections.  
+
+---
+
+# HTTP vs HTTPS
+
+- HTTP → Not secure, data is plain text.  
+- HTTPS → Secure, data is encrypted (SSL/TLS).  
+
+VPN :
+Your ISP and others on the network cannot see which sites you visit — they only see that you are connected to the VPN.
+The VPN server assigns you a new IP address, hiding your real IP from websites.
+
+Q. WEB DEVLOPMENT ?
+-> client request server for site so server return html,css,js files to client.
+

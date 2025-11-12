@@ -1,0 +1,26 @@
+* compiler c/cpp - 1st convert file to machine code (compile time) -> we run that machine code (run time )-> cpu  
+    java - convert to byte code :: error is caught during compile time !
+* interpreter - no complie option -> execute the code line by line. That's why interpreter lang is slow.
+* just in time ! JS!
+
+* Just in time -> combination of compile + interpreter.
+    Cpp is faster cause it has less steps.
+    Js is a Just-In-Time language.
+
+Error:
+*run time error.
+
+* first Js was slow. untill was updated js.
+* first Js get interpreter run also it get converted into machine code and when code is run again then machine code is sent next time.
+    machine code is sent 2nd time to cpu, CPU knows how to run machine code.
+
+* Platform dependent(C/C++) - Platform(window,mac,linux)
+    machine code c,cpp if run in mac works but on windows that machine code won't work.
+    you need original code!
+* Platform independent(Js,java) - java is converted to byte code & you need JVM 
+    machine code is same for all Platform. so with just machine code we can run it.
+    js need only browser to run!
+
+* typescript is never run cause browser run only js.
+    ts is to convert to js , Called transpliser - convert one language to other.
+

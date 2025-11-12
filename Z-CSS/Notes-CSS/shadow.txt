@@ -1,0 +1,17 @@
+* box-shadow: x-axis[+right & -left]px y-axis[+down -up]px blurRadius-px spreadRadius-px color;
+
+*spreadRadius-px
+    Default is same size of div.
+    will incress that many px in all 4 directions.
+    Positive → shadow grows bigger
+    Negative → shadow shrinks
+
+
+*blur-radius (optional)
+    Bigger value = softer & more blurred shadow
+
+* box-shadow:inset - - - - ;
+    filp
+    to bring shadow above the box, default its below(right&below).
+
+

@@ -1,0 +1,79 @@
+.container{
+    background-color: aliceblue;
+    height: 200px;
+    width: 340px;
+    position: relative;
+}
+#circle{
+    background-color: red;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+
+    position: absolute;
+    left: 110px;
+    top: 40px;
+}
+
+#england{
+    background-color: yellow;
+    height: 200px;
+    width: 300px;
+    position: relative;
+}
+#box1{
+    background-color: blue;
+    height: 70px;
+    width: 60px;
+    position: absolute;
+    top: 0px;
+}
+#box2{
+    background-color: blue;
+    height: 80px;
+    width: 60px;
+    position: absolute;
+    bottom: 0px;
+}
+#box3{
+    background-color: blue;
+    height: 80px;
+    width: 200px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+#box4{
+    background-color: blue;
+    height: 70px;
+    width: 200px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+#flag{
+    background-color: red;
+    height: 200px;
+    width: 300px;
+    position: relative;
+}
+#color{
+    background-color: darkblue;
+    width: 300px;
+    height: 90px;
+
+    position: absolute;
+    top: 55px;
+}
+#c{
+    background-color: aliceblue;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+
+    position: absolute;
+    left: 120px;
+    top: 15px;
+
+}
