@@ -13,6 +13,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(div1); // now  all mention in div1[] will be displayed 
 
 // Jsx : if u wanna create div>div>h1>p></p</h1</div</div very complicated using normal react
-
+// so we use bundler !
 
 

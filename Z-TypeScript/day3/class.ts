@@ -1,3 +1,5 @@
+import auth = require("firebase/auth");
+
 // Class
 class Bank{
     // Attributes : here are complusry to be initialize
@@ -68,4 +70,4 @@ console.log(zalue([1,2,3,3]));
 //  Generic Arrow
 const jdid = <T>(a:T):T=>{
     return a;
-}
+}  

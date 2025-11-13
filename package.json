@@ -1,0 +1,27 @@
+{
+  "name": "defence",
+  "version": "1.0.0",
+  "description": "\"learning react\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "krish",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krish01github/NEXUS.git"
+  },
+  "keywords": [
+    "nexus"
+  ],
+  "bugs": {
+    "url": "https://github.com/krish01github/NEXUS/issues"
+  },
+  "homepage": "https://github.com/krish01github/NEXUS#readme",
+  "dependencies": {
+    "parcel": "^2.16.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  }
+}

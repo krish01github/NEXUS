@@ -27,3 +27,33 @@
 ** jsx :- not part of js/react js 
     Write code in normal html that will be converted into react element.
 
+** Not all part of react are gonna be in use so waste space or time on it .
+    File size of react should be less and time taken should also be less so we cannot copy the react lib nor use it like link:src in .html .
+** Bundler :: so we use Bundler
+    Bundler read your files & see your dependency , will optimise your code remove spaces + only select code from react which are being used in code.
+    all files html,css,js.
+    Many Bundler : webpack,vite,parcel. So, all this optimisation is done by Bundler.
+
+** parcel ::repo  https://github.com/krish01github/NEXUS.git
+    npm init
+    npm install
+    npm install parcel //install parcel , node_module
+
+    node_module , 315mb cause parcel uses other packages and those uses other thus entier node_module comes when u install parcel.
+    
+    npm install react //react in node module,  no need link in html now
+    npm install react-dom
+
+    // package.json -> tells on which my project is depended -> react, parcel, react-dom
+    // package-lock.json -> STORES exact version of the packages for your code.
+        node_module not adviced to put in git hub.
+        package, package-lock + our work share ! if no package-lock then only looks in package then if any update then it does it.
+
+    // version : 0.0.0 ? major.minor.patch -> 
+        * ^ symbol means minor & patches npm will  update.
+        * ~ patches changes only.
+        patch : bug solved , no functionality added 
+        minor : new functionality , but older version code still works
+        major : older version code get updated such that you can't use in old fasion way.
+
+** npm : link to all devlopment packages.
