@@ -10,7 +10,6 @@ syntax :
 *2 let variable_name:unknown; // same like any ! but safe cause you can't perform operation on unknown directly!
     If you want to operation on unknown variable  then we have to first check condition on variable then operate.
 
-
 ** non-primitive datatype!
 *1 array -> *let/const variable_name:datatype[] = [];// datatype :: string,number
     if let a = [1,2,3] // compiler says its type  number 

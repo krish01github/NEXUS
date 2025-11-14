@@ -1,3 +1,4 @@
+** Ts is a transpiler : convert code from one langguage to another.
 ** Problem with Js that we needed TS :
     1. variable can have any datatype 
     2. object.key will never give error even if key don't exist // no key o/p undefined
@@ -24,5 +25,7 @@
     cause Ts code same as js code onlt TS will show the erorr.
 
 ** tsc --watch // real time converion from TS -> Js as you keep writing in Ts 
-control + c // to exist this dynamic nature
+
+
+** control + c // to exist this dynamic nature
 

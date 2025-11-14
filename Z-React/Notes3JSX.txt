@@ -1,0 +1,53 @@
+** jsx :- not part of js/react 
+    Write code in  html that will be converted into react element.
+    after completing the bundler u can do it 
+    // BundlerProduction 
+    // jsx will return React element - so we call this as react element only 
+    eg : const newEle = ( // when u don't wanna give any extra div so use empty
+        <>
+        <h1 className="iamclass" id="iamid">Hello hi</h1> // can't use class, use className
+        </>
+    );// cause newEle only takes one element so put all sub tags in main tags.
+    ** say bye bye to const newele = ReactDOM.createRoot("tag",{style},"textContent");
+        This is a part of react !
+        return react element then using .render() will convert it to html element.
+
+** Js/React don't understand normal html so someone should convert it to react/js :-
+    ans : Babel // already present in parcel !!
+    convert html to react code.
+    Babel: jsx -> react -> render -> to display in html 
+
+** jsx is complier/transpiler. just like typescript.
+
+** Difference html | jsx using bundler,Babel
+    * class - className
+    * use can use js in b/w html eg: by using {} and inside it use js varibales,object..
+    let name = "Bitch"
+    const ele = (
+         <h1 className="iamclass" id="iamid">Hello hi {name}</h1> 
+         <h2 money="23">money</h2> // own attribute , how to pass as number? {23}
+         <h2 money={23}>money</h2> // u can send anything object,array..
+         // where ever u see {} meaning you are writing js expression
+         //inline css
+        <h1 style = {Js_object}></h1> // style asks for object
+        <h1 style = {{backgroundColor:blue,}}></h1> // direct object
+    )
+
+*** React component :-
+**class based - old method no longer in use!
+**function based :- how to write function
+    function function_name(){ // different ways of function 
+        return <h1>ahhhh</h1>;
+    }; //jsx is returned
+    const funCom = function_name();
+    root.render(funCom);
+
+** when calling multiple function in single .render()
+    ReactRoot.render(<> {function1()} {function2()} </>); // on element only can be passed
+
+** you can store multi-react-element in one element
+    const ele = <>{ele1} {ele2} {ele3}</>
+
+
+
+
