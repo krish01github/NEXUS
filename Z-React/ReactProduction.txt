@@ -34,12 +34,16 @@
 ** parcel ::repo  https://github.com/krish01github/NEXUS.git
     npm init
     npm install
-    npm install parcel //install parcel in node_module
+    npm install parcel //install parcel in node_module dependency
+    npm install -D  parcel // dev dependency
 
     node_module , 315mb cause parcel uses other packages and those uses other thus entier node_module comes when u install parcel.
     
     npm install react //react in node module,  no need link in html now
     npm install react-dom
+
+    // add type="module"
+    <script type="module"  src="./first.js"></script>
 
     // package.json -> tells on which my project is depended -> react, parcel, react-dom
     // package-lock.json -> STORES exact version of the packages for your code.
@@ -56,6 +60,7 @@
 ** npm : link to all devlopment packages.
 
 ** To use ReactDOM & React without scripttag in .html :- Bundler optimisation 
+    production::
     in .js :-
         import React  from "react"; // import 
         import ReactDOM from "react-dom/client";
@@ -73,3 +78,18 @@
     ** Upload dist for production without .map 
     ** if node -v & parcel not compactabel then segment fault 11 
     ** dist & .parcel-cache & .map files are created ::
+
+
+*** Vite Bundler :- BEST NOW 
+    npm create vite@latest
+    npm install // if no node module
+
+    // enter the vite-folder then run the project you get the link for the project 
+    npm run dev // in package.json scripts runable 
+    npm build // dist file - production ready code 
+
+    *will make vite-project inside it will be src, package, package-lock.. directly 
+
+** dev dependency : won't be added in production :: so keep those in devDepency in package.json
+    like Bundler.
+

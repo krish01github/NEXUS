@@ -48,6 +48,14 @@
 ** you can store multi-react-element in one element
     const ele = <>{ele1} {ele2} {ele3}</>
 
-
-
-
+** {} jsx , js expression ok eg:something that brings an output-string,number,array &&  js statement not ok eg:a=20;
+    no object directly , but object.key will show result. but array will be printed normally without space.
+allowed:
+10
+"hello"
+true
+{name: "krish"}.name
+arr.map(...)
+condition && <p>Hi</p>
+(() => 20)()
+Template expressions: `Hello ${user}`

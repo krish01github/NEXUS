@@ -1,0 +1,24 @@
+body{
+    padding: 0;
+    box-sizing: border-box;
+}
+#root{
+    height: 100vh;
+    background-color: pink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.first{
+    background-color: aqua;
+    height: 200px;
+    width: 300px;
+    text-align: center;
+}
+button{
+    height: 40px;
+    width: 110px;
+    border-radius: 18px;
+    margin-right: 10px;
+    margin-left: 10px;
+}

@@ -1,0 +1,28 @@
+React will do the dom manipulation/update on its own . 
+
+** import React,{useState} from "react"; // React is default , useState is other function 
+** array are stored by reference & numbers are stored by new memory space. So we need to create a new array so that react update our dom (clone for reference).
+    cause react will only update if new value is create new memory space
+    react helps so that unnesseary updates.
+    * re-render : call the function again, if no changes in dom after once but after that  react will  auto  don't render. 
+        only with premitive datatype , but object if same render it won't work once also  cause object is seen by  reference.
+* useState() //u can't used this in conditional statement
+    *let [count , setCount] =  useState(0); returns array [0 , function()]
+    why function ? 
+    when variable changes call the function_name(changed_value); 
+    * Thus everywhere that variable present it will be updated to new changed value.
+    * works:first run all line in the function called  setCount(value) will call the main function but this time useState(value) new value be passed.
+
+** useEffect(()=>{}, []); // callBack function , dependency
+    It is a speacial hooks at execute at very end! after everything is executed then it runs useEffect. for 1st time.
+
+    * dependency ? is dependency is empty it won't work ! 
+    if current dependency changes then execute the useEffect callBack function again.
+
+    * if u don't give dependency [] then it works everytime.
+    * dom - manipulation keep it under useEffect.
+
+** props are argument
+
+** export default React.memo(function_name);
+    If function call is giving same result it don't call but if props are dynamic then it calls!

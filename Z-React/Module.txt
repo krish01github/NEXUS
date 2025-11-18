@@ -1,0 +1,31 @@
+component/function/module :
+To write code neatly.
+
+src > (
+    .js 
+    component > .js 
+    utils > images, details.js
+ )
+
+* so component are kept in different .js how to import it to main .js by import thus export to component file.
+
+* method 1
+export default Function_componet_name; //
+import Function_componet_name from "./";
+
+* method 2
+export default function Function_componet_name(){}
+
+* export array u can write in front during declartion like component
+const arr = []; //export default arr = [] not Allowed
+export default arr;
+
+* one file have only 1 export default!! use normal export then use {}!
+export function Function_componet_name(){}
+import {Function_componet_name, } from "./";
+
+* rename during import 
+import Function_componet_name as fcn from "./";s
+
+if u use jsx use .jsx not .js , if pure Js then use .js
+

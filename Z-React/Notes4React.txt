@@ -1,0 +1,21 @@
+React component/function first letter is always Capital :-
+
+** To call function in react.
+* function function_name(){
+    return <h1>hello</h1>;
+}
+const ele = function_name();
+const other = <function_name/>; //error ?? Cause it want 1st capital letter of function_name
+
+* function Greet1(arg){ // all argument is stored in a object 
+    return <h2>Hello ji {arg.name} {arg.age}</h2>
+}
+const ji = <Greet1 name="je" age="90"/>;// works !!
+*Jsx
+  why cause in html tags first letter is always small so it identify with capital letter that its not html 
+
+
+** jsx will directly iterate over array without any for loop. myntra
+    // React receives this array and renders each element automatically.
+
+** whenever uses array :: use key=

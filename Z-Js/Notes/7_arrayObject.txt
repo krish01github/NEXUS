@@ -43,7 +43,8 @@ for(let num of array_name)
     return an array so we need to store. original array no changes. at a time multiple array concat.
     * newArray = [1array,2array,,]; // return in 2D type array.
     * newArray = [...1array,...2array,...]; // return in 1D type array just like .concat()
-
+    * newArray = [...arr]; // clone array
+    
 ** Use normal + to add to array :- STRING NOT ARRAY AS RESULT!
     a = [1,3,4,5] , b = [6,54,32,1] // no change in original array.
     * c = a+b;// c typeof is string. and not object(array).

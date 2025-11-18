@@ -7,7 +7,7 @@ STEPs
 
 * not prefered method. 
 IN HTML tag:
-onClick = "function_name()"
+onClick = "function_name()" || onClick = {()=>{}} // callback function which it can exceute
 In Js:
 function function_name(){
 }
