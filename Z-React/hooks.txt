@@ -7,13 +7,25 @@ React will do the dom manipulation/update on its own .
     * re-render : call the function again, if no changes in dom after once but after that  react will  auto  don't render. 
         only with premitive datatype , but object if same render it won't work once also  cause object is seen by  reference.
 * useState() //u can't used this in conditional statement
+    create once & stored with its reference.
     *let [count , setCount] =  useState(0); returns array [0 , function()]
     why function ? 
     when variable changes call the function_name(changed_value); 
     * Thus everywhere that variable present it will be updated to new changed value.
     * works:first run all line in the function called  setCount(value) will call the main function but this time useState(value) new value be passed.
 
+** set--(()=>{}) ; has callBack function, return latest value
+    The function you pass to setState ALWAYS receives the latest, correct state value — even if multiple updates happen quickly.
+    1st update → prev = 0 → returns 1
+    setCount(count + 1);
+    setCount(count + 1);
+    2nd update → prev = 1 → returns 2
+    setCount(prev => prev + 1);
+    setCount(prev => prev + 1);
+
+
 ** useEffect(()=>{}, []); // callBack function , dependency
+    If dependency changes → RUN this block of code
     It is a speacial hooks at execute at very end! after everything is executed then it runs useEffect. for 1st time.
 
     * dependency ? is dependency is empty it won't work ! 
@@ -21,8 +33,33 @@ React will do the dom manipulation/update on its own .
 
     * if u don't give dependency [] then it works everytime.
     * dom - manipulation keep it under useEffect.
+    * useEffect expects regular JavaScript - not JSX </>
 
 ** props are argument
 
+** useMemo (function(),[]); callBack function,dependency
+    use in function :: thus useMemo return a value from function.
+    If the dependency does not change, useMemo RETURNS the previously stored (memoized) value — it does NOT recompute.
 ** export default React.memo(function_name);
     If function call is giving same result it don't call but if props are dynamic then it calls!
+
+** useCallback
+    How to re-use the function & not allocate new memory space during re-render.
+    * but inside that function if variable values get changed? 
+        so if that values changes then we have to create a new function if no changes then we can re-use the same function.
+    * useCallback :  next re-render it catches the previous function.
+    ** suntax : const variable = useCallback(()=>{},[]); function callBack , dependency
+    * when dependency changes then it create a new function memory else uses previous renders function.
+
+** useRef hook :-
+    when function re-render by useState() the previous value which aren't useState variable
+    those get re-initialised , if we want to keep the previous value BY REFERENCE!
+    so that after render also it hold previous value.
+    * create a object , key-current which holds the value.
+    * syntax : const money = useRef(0);
+    money = {
+        current : 0
+    }
+
+
+

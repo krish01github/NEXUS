@@ -26,7 +26,7 @@
 
 ** promise have 3 state 
     1.pending - promise{<pending>}
-    2.resolve(data-actual data) - .the()
+    2.resolve(data-actual data) - .then()
     3.reject(data-why rejected) - .catch()
 
 ** .json() for body! 3.jss

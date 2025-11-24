@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import ColorFull from  "./components/ColorFull";
 
@@ -19,4 +19,4 @@ function Main(){
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Main/>)
+root.render(<Main/>);

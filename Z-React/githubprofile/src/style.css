@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#heading{
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+}
+h1{
+    font-size: 50px;
+    color: rgb(42, 46, 50);
+}
+.griding{
+    margin: 10px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content:center;
+}
+.cards{
+    padding: 20px ;
+    border: 2px solid black;
+}
+img{
+    border-radius: 50%;
+    height: 100px;
+    width: 130px;
+}
+input{
+    font-size: 1.2rem;
+    width: 250px;
+    margin: 15px;
+    padding: 5px 10px;
+    border-radius: 7px;
+}
+#search{
+    width: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: antiquewhite;
+}
+.main-cont{
+    text-align: center;
+}

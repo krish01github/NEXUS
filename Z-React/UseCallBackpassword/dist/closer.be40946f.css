@@ -1,0 +1,17 @@
+body {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+#root {
+  text-align: center;
+  background-color: #faebd7;
+  width: 400px;
+  height: 100px;
+  padding: 20px;
+}
+/*# sourceMappingURL=closer.be40946f.css.map */
