@@ -1,0 +1,20 @@
+npm create vite@latest my-project
+cd my-project
+
+** If not vite but parcel install taiwind!
+npm init -y
+npm install tailwindcss @tailwindcss/postcss
+
+** in .css
+@import "tailwindcss";
+
+.postcssrc
+
+.gitignore :-use which file you don't want to push in production
+
+margin&padding 1->4px
+** Advantage of tailwindcss :
+   same class can be used anywhere no need of writing css long codes , repeation of code in css is cut down.
+
+** Use in React :-
+<tag className=""></tag> *NOT class="" 

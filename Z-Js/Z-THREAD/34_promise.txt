@@ -71,3 +71,7 @@ function(parameter)
 .then(order=>another_function(order))
 .then()
 .catch();
+
+promise.ok
+true if the status code is in the range 200-299 (successful responses)
+false for any other status code 

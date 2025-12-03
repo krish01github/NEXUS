@@ -1,0 +1,26 @@
+Index is never passed as key for array!
+When array is made use while creating component then all array elements have same function being used.
+If u want to only use that function only for a specific element then we need use of key! 
+Key is unique for all elements.
+
+** Key can't be passed as props !
+** useState is attached with key!!
+** state variable will holds it value during re-render !!
+
+Ts      | Js       | Java
+key=0   |key=1     | key =2
+count=4 |count=8   | count=9
+
+--re-render // count is a state variable || useState
+* useState & key are attached/linked so for a key value will be same !
+
+C++     | Ts       | Js        | java
+** arr index is always same || So, when key created it check if that key l=already exist if so give same details 
+key=0   |key=1     | key =2    | key=3 
+count=4 |count=8   | count=9   | count=0// This was created new
+
+** Even when you sort the array with key=index then you get wrong value cause after sorting key-useState stick but value changes its position.
+** If you don't give key , its takes index as key! Mordern React!
+
+** What's unique? value it's self could be unique.
+If key don't exist already durimg re-render then it creates it! if exists then give previous details only!

@@ -6,6 +6,9 @@ React will do the dom manipulation/update on its own .
     react helps so that unnesseary updates.
     * re-render : call the function again, if no changes in dom after once but after that  react will  auto  don't render. 
         only with premitive datatype , but object if same render it won't work once also  cause object is seen by  reference.
+** arr = [...arr , valueHereWillBePushBack];
+   obj = {...obj, keyvalueHereWillBePushBack:valueHereWillBePushBack};
+
 * useState() //u can't used this in conditional statement
     create once & stored with its reference.
     *let [count , setCount] =  useState(0); returns array [0 , function()]
@@ -60,6 +63,30 @@ React will do the dom manipulation/update on its own .
     money = {
         current : 0
     }
+
+**  state Lifting just simple term function call :- why?
+    * components are small .jsx, modify the parent .jsx. 
+    parent .jsx can pass variable,function.. to its child .jsx but 
+    child/components .jsx can't pass value to parent .jsx or siblings components.
+    ** let the parent create all data. & pass all info to child .jsx 
+
+** useContext hook : props driling 
+    passing the props from parents to .jsx which needs but if mid .jsx files don't wanna use so its a problem?
+    * It also render the mid .jsx cause where ever the props go it re-render so we wanted a way so it can directly acces the data from parent to destination .jsx
+    ** Global file where all varible are stored , and all .jsx can access the file so no need to pass props!
+    syntax : import { createContext } from "react"; // in datasets.js
+        const GlobalContext = createContext(); // can leave or give default content!
+        import globalContext from "./global" // where ur are using datasets
+        import { useContext } from "react"  // where u are using datasets
+        const data = useContext(globalContext); // why cause, console.log(globalContext); // return object
+    ** <globalContext.Provider value={{counts:count, setCounts:setCounts}}> // passed as object/array/.. , same name key-value just count,setCount
+        // previous data in datasets will be erased and new data which we passed will be occured
+        // even there grand children/decendents can access , just use import 
+        </globalContext.Provider> 
+    * // GlobalContext is an object !
+
+
+
 
 
 

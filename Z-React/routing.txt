@@ -1,0 +1,72 @@
+* content-page get changed but no re-load?
+-> cause ever new html link is opened it remove the current html file & bring the new clicked html file from server.
+    So, we keep one html file , using Js we manupulate DOM which does not re-load.
+
+* router instalation :- cause we not using vite we use parcel
+npm create-vite@latest
+npm i react-router
+** import { BrowserRouter,Routes,Route,Link } from "react-router";
+
+* we have a liberay in react : router
+    router :-  the command i give open that page.
+    /  ---> starting default page.
+    /contact ----> goes to contact page
+    /dashboard ----> goes to dashboard page
+
+** working :-
+import { BrowserRouter,Routes,Route } from "react-router"; // import 
+//in return 
+<BrowserRouter> // it watches ur url change , its a lib component from where routing start 
+ <Routes>// you can write many route in routes but only one work which is activated
+    // in link you can see that path=""
+    <Route path="/" element={<Home></Home>}></Route> // If only "/" in path Goes to home :: default page
+    <Route path="/Contact" element={<Contact/>}></Route> // "/Contact" goes to contact 
+ </Routes>
+</BrowserRouter>
+** But in actual website we need button to change content , not going to link and changing path.
+    insead of anchor tag we use Link !!!
+import { BrowserRouter,Routes,Route,Link } from "react-router";
+<BrowserRouter>
+<nav> // This will be visible in every page of Route!
+    <Link to="/">Home</Link>    // this is converted to anchor tag? cause Link is liberay
+    <Link to="/Contact">Contact</Link>
+</nav>
+</BrowserRouter>
+
+** Nested routing :- /1/2/3 :-Routing.
+<Route index element={<Zero/>}></Route> // index means default page when /1 -shows-> /1/Zero works 
+<Route path="Hello" element={<Hi/>}></Route> // if u write /Hello it starts to search from root level /Hello don't exist /Details/Hello exist
+import { Outlet } from "react-router"; // in /1 file 
+// Details return 
+return (
+    ..
+    <Outlet/> // now /1/2 works, that function will render at end cause Outlet at end of return
+    // catches that function which user have asked in route
+)
+* Outlet, helps us to know which  it should show on webpage , It catches the function and show on outlet & runthe function/component , 
+    is oulet is written at starting of return all details of that outlet function will be shown at start
+    End at End
+    Mid at Mid
+
+
+** useParams :- routing Params :- Dynamic root 
+catches info from link in form of object then use that as routing.
+    ** import { useParams } from "react-router"
+    useParams() is used because React doesn’t automatically know which dynamic values are in your URL.
+    BrowserRouter, Routes, Route, Link do read the URL,BUT they do NOT give your component the dynamic value.
+    Routing system knows the URL → but your component does not.
+    useParams() = gives the URL data to your component.
+    * github api : https://api.github.com/users?per_page=20
+    ** <Route path="/Github/:name" element={<Github/>}></Route> // that /: will tell that the value is dynamic, name or anything 
+    ** where we have kept the info , dynamic catch : 
+        const dataByLink = useParams();// catch object 
+        dataByLink = {
+            name : "Which you have given in url";
+        }
+        const {name} = useParams(); // exact same key when de-struct object
+
+** object?.key --> if that object exist then go to key and give value.
+
+    
+
+

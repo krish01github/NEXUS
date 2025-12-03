@@ -20,6 +20,8 @@ export default function Function_componet_name(){}
 const arr = []; //export default arr = [] not Allowed
 export default arr;
 
+** default export Then while import we can give any name not neccessary what you exported name.
+
 * one file have only 1 export default!! use normal export then use {}!
 export function Function_componet_name(){}
 import {Function_componet_name, } from "./";

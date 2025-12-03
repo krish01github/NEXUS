@@ -1,0 +1,64 @@
+** Immer :-
+update the object , Immer will create a new object so that React can re-render after updation.
+Previous days we wrote :-
+    const reactSlicer = {
+        count : {count:0}
+    }
+    reducers:{
+        Increment : (state) => {
+            return {...state, count: state.count+1}
+        }
+    }
+
+Original object 
+Draft object -> all changes in Draft/dublicate , Immer checks if no changes no update/new object else new object created and render.
+** either return a new object or update my Draft!
+
+
+** API CALL IN REDUX :-
+fetch ->1.pending, 2.resolve, 3.reject.
+* request status , data , error. 3-case while fetching the data. use try catch block.
+* Don't fetch locally ? why would i write same code in different component?
+  So fetch globally !!! Not in component!!!
+  To fetch globally , use :- createAyncThunk , will also handle dispatch for 3-cases !
+  createAyncThunk return a function just call that function it will load,error,status handled.
+  * Action : type & payload ! cause dispatch work is done by asyn
+
+** APIs
+https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20
+
+
+** createAyncThunk :- all api calls 
+   import { createAsyncThunk } from "@reduxjs/toolkit";
+   const FetchData = createAsyncThunk(// this is a function not action so its type isn't mention 
+    'Coin/fech', // The action creation type !
+    async (args , thunkAPI) => { // args is the parameter given : FetchData(args)
+                                 //thunkAPI (anyName) will do the work of useDispatch
+        try{
+            const res = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${args}`);
+            const data = await res.json();
+            return data; // This goes to payload.
+        }
+        catch(error){
+            return rejectWithValue("Error Occured!"); // will return an error Message
+        }
+    }
+   ) 
+   ** createAsyncThunk create 3 dispatch :-
+      {type: "coin/fetch/pending" , payload: undefined} // 1
+      {type: "coin/fetch/fullfilled, payload:data} // 2
+      {type: "coin/fetch/rejected, payload:"error Message"}//3
+
+** extraReducers : in slice 
+
+| What you dispatch           | What it actually is                | Who handles it?        |
+| --------------------------- | ---------------------------------- | ---------------------- |
+| `dispatch(actionCreator())` | `{ type, payload }` (plain object) | Reducers               |
+| `dispatch(asyncThunk())`    | A function (not an action)         | Redux Thunk middleware |
+
+
+**  dispatch by thunkAPI will pass {type : "slice1/fetch/pending" , payload: undefined} 
+** it to all slices
+Thats why asyn reducer are written in extraReducers cause in extraReducers.
+** in slice > extraReducers > .addCase(function_name.pending, (state, action)=>{})
+    here function_name == "slice1/fetch" -> function_name.pending =="slice1/fetch/pending"

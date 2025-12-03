@@ -1,0 +1,101 @@
+Redux Toolkit (Slices) → Creates global state + reducers
+configureStore()      → Creates the store
+Provider              → Connects store to React
+useSelector()         → Read from store
+useDispatch()         → Update store
+
+** React Redus :- (store you create, join with the react)
+   * context-API : props drilling 
+   Redux says no need to do state lifting. I will help you do this by redux.
+
+** Redux toolKit :- Redux Toolkit is used when REACT needs to interact with a GLOBAL STORE
+    npm install react-redux
+    npm install @reduxjs/toolkit
+
+    // In global store
+    import slice1Reducer from "./slice1"; // You can give any name cause default export from slice file 
+    import { configureStore } from "@reduxjs/toolkit";
+    const store = configureStore({
+        reducer : {
+            slice1: slice1Reducer // .. such many slices
+        }
+    })
+   * Global_STORE a centralised data , create it which is available for all.
+     keep all data , functions.
+
+   *Reducer
+     change of those data should also done globally. So all other componets could get the updated value.
+     those function which makes changes in global data is called reducer.
+
+   ***Dispatch : useDispatch its a hook 
+   import { useDispatch } from "react-redux";
+   import  {Increment,Deccrement,Reset } from "../features/slice1"; // Import functions of splice
+   * Takes the function call from other file.jsx to Global_STORE.
+     ** this is a action 
+     dispatch(function_name()); // takes to global_store where reducer/function body are kept.
+     * in reducer chceks that function and runs.
+   *  dispatch(slice1.Increment()) , 
+      **console.log(Increment())->action : {type : "slice1/Increment", payload:undefined}
+      //payload is nothing but action  part, helps in passing argument to reducer -> action.payload -> argument
+      dispatch(Increment()) will return {type : slice1/Increment}, cause only slice1 should have that function else error!
+      
+      ** reducer : {functionName : (state, action)=>{state.count = action.payload}}
+      * 2 slice function name could be same , 
+        thus use * dispatch(slice1.Increment()) or * import function_name as new_function_name so avoid using same function_name.
+        import * as slice1 from "../slice1"; ||dispatch(slice1.increment());
+        import * as slice2 from "../slice2"; ||dispatch(slice2.increment());
+      How does it knows that function is of splice1 cause it send request to all splices finds where taht function exist then run it!
+
+
+   ***Slice : 
+   import { createSlice } from "@reduxjs/toolkit";
+   const Var_name = createSlice({}); // object-store all data/function in key-value
+   *  when you keep same name of data/function in global_store ? then which reducer/function or data to use and run CONFUSION.
+      DIVIDE Your global_store into slice :-
+        slice1 : all data & reducers/functions
+        slice2 : all data & reducers/functions
+    * So, now when you dispatch , slice will decide where to go and which reducer to use.
+        Slice should have unique name !!
+        * how to know if slice name is already used?
+        -configureStore : all slice names !
+    * after creating slice export it to global store.
+      Import all slice in global_store & configureStore with slice name : reducer name
+    
+    // To use those slice function/reducers 
+    ** export const {Increment,Deccrement,Reset } = reactSlicer.actions; // slice file 
+       import  {Increment,Deccrement,Reset } from "../features/slice1"; // import in components
+       so that we can use those function in components.
+
+**  export const {Increment,Deccrement,Reset } = reactSlicer.actions; // count.jsx , where function are used , dispatch power!
+**  export default reactSlicer.reducer; // reducer ! Global store! 
+
+//app.jsx main React file to store 
+** import { Provider } from "react-redux";
+   import stores from "./features/store"; 
+   return(<Provider store={stores}>
+   
+   </Provider>)
+   In main app.jsx  + store // so that store can be available for all childs/decendents.
+
+** In store we add slice by matching slice & reducer .
+
+** import { useSelector } from "react-redux"; // when u use useSelector it bring the global_state everthing is mention in that.
+    * Only helps to read data!
+        globalstate → the entire Redux global state create in background. key(sliceName) - value(MostUpdatedValue)
+        globalstate.someSlice → the slice key inside the store
+        globalstate.someSlice.someValue → the specific data inside that slice
+    const var = useSelector((globalstate)=>globalstate.slice1.count);
+    const globalstate = { // when use useSelector : global_state
+        slice1:{
+            count:0,  // initialState value 
+            .. multiple value
+        },
+        ..Multiple slice 
+    }
+    * global_state React-Redux automatically gives it to all components through the Provider.
+   to access other infomation other than reducer in slice we use useSelector 
+
+* how will i get the latest value cause initialState will give 0 in slice ?
+we use callback just like useState function that uses callback to get previous value and update it then return it.
+// const [count, setCount] = useState(0);
+// setCount((preVal)=>preVal+1);
