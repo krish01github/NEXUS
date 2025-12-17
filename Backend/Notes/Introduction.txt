@@ -1,0 +1,22 @@
+** Node Js  -> v8 engine + GlobalObject(setTimeOut,..fetch(),..console.log(),..DOM,..Connect DB)
+In Node Js there is v8 Engine (picec of code written in C++ which understand ur JS code).
+v8 can be appended with any c++ application.
+
+* Does Js code convert into C++?
+No : Direct runs :- js file is simply input to v8 that convert to machine code.
+
+** Server 
+serves the request.How to make server nothing but JS file. Takes info from DataBase.
+Cause we never xpose DB directly.
+All credential,BusnessLogic is kept at backend.
+
+** DataBase - MongoDB 
+
+-----------------------------------------------------------------------------------------------------------------------
+** require("./fileDestination.js"); // CJS: common js module
+require Implementation :- that fileDestination code comes to current code.
+iife : The entier require() code wrap upin a function
+    (function (){})();
+Q. we need to run another .js file before running current .js file?
+    I need other.js in current file! This are called module.
+

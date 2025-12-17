@@ -19,6 +19,7 @@ React will do the dom manipulation/update on its own .
 
 ** set--(()=>{}) ; has callBack function, return latest value
     The function you pass to setState ALWAYS receives the latest, correct state value — even if multiple updates happen quickly.
+    In a setTimeout/function , count value remain same even if you use multiple time set--() so callBack is reqiered
     1st update → prev = 0 → returns 1
     setCount(count + 1);
     setCount(count + 1);

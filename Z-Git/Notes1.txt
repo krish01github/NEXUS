@@ -35,7 +35,7 @@ git commit -m "My first code" // -m is message with commit
 
 
 remove file from staging area :from  git add to remove it 
-get reset <filename>
+git reset <filename>
 git restore --staged <file>
 
 
@@ -53,3 +53,5 @@ git revert <hashCode> // delete only that changes , rest after that and before t
 ** commit are depends on its previous version - branch is called master branch 
     form like linklist head points the latest.
 
+// Git resposirty.
+git clone {LINK}

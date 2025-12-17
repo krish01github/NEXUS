@@ -859,7 +859,7 @@ $RefreshReg$(_c, "App");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","react-dom/client":"hrvwu","react-router":"2jawN","./components/Home":"k6Idr","./components/Restorent":"hMEZ3","./components/RestrorentMenu":"eKFQH","./components/Search":"iUv0T","./components/SecondaryHome":"aSRKb","react-redux":"hbNxT","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","./store/store":"jc9XI","./components/CheckOut":"9oBzE"}],"dVPUn":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","react-dom/client":"hrvwu","react-router":"2jawN","./components/Home":"k6Idr","./components/Restorent":"hMEZ3","./components/RestrorentMenu":"eKFQH","./components/Search":"iUv0T","./components/SecondaryHome":"aSRKb","./components/CheckOut":"9oBzE","./store/store":"jc9XI","react-redux":"hbNxT","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"dVPUn":[function(require,module,exports,__globalThis) {
 'use strict';
 module.exports = require("ee51401569654d91");
 
@@ -135129,20 +135129,7 @@ $RefreshReg$(_c, "RestHeader");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react-redux":"hbNxT","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react-router":"2jawN"}],"jc9XI":[function(require,module,exports,__globalThis) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _toolkit = require("@reduxjs/toolkit");
-var _cartSlice = require("./CartSlice");
-var _cartSliceDefault = parcelHelpers.interopDefault(_cartSlice);
-const Store = (0, _toolkit.configureStore)({
-    reducer: {
-        cartSlice: (0, _cartSliceDefault.default)
-    }
-});
-exports.default = Store;
-
-},{"@reduxjs/toolkit":"fKS5f","./CartSlice":"9UX9P","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"9oBzE":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react-redux":"hbNxT","react-router":"2jawN","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"9oBzE":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$f8b0 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$f8b0.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -135213,6 +135200,19 @@ $RefreshReg$(_c, "CheckOut");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react-redux":"hbNxT","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}]},["bFEnG","gFRue"], "gFRue", "parcelRequirecd58", {}, null, null, "http://localhost:1234")
+},{"react/jsx-dev-runtime":"dVPUn","react-redux":"hbNxT","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"jc9XI":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _toolkit = require("@reduxjs/toolkit");
+var _cartSlice = require("./CartSlice");
+var _cartSliceDefault = parcelHelpers.interopDefault(_cartSlice);
+const Store = (0, _toolkit.configureStore)({
+    reducer: {
+        cartSlice: (0, _cartSliceDefault.default)
+    }
+});
+exports.default = Store;
+
+},{"@reduxjs/toolkit":"fKS5f","./CartSlice":"9UX9P","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}]},["bFEnG","gFRue"], "gFRue", "parcelRequirecd58", {}, null, null, "http://localhost:1234")
 
 //# sourceMappingURL=2.e5d186c3.js.map

@@ -15,7 +15,7 @@ const reactSlicer = createSlice({
 
 console.log(reactSlicer); // all property , why action,rducer?
 
-export const {Increment,Deccrement,Reset,CustomInc } = reactSlicer.actions; // count.jsx , where function are used
+export const {Increment,Deccrement,Reset,CustomInc } = reactSlicer.actions; //  where function are used
 // cause when u dispatch it should know which slice function it is so we export it as actions 
 export default reactSlicer.reducer; // reducer ! Global store!
 

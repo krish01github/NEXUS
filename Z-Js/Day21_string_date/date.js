@@ -18,5 +18,5 @@ console.log("--------------------------");
 // gives utc time ! brower auto convert to local date to user
 const hi = Date.now();
 const hello  = new Date(hi);
-console.log(hi);
 console.log(hello); 
+console.log(hi);

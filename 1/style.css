@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(145deg, #1f1f1f, #2c2c2c);
+    color: #f0f0f0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container {
+    border-radius: 20px;
+    text-align: center;
+    padding: 50px 40px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    max-width: 90vw;
+  }
+  
+  h1 {
+    margin: 20px 0;
+    color: #f5f5f5;
+    letter-spacing: 1px;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;      /* fill container */
+    margin: 0 auto;   /* center inside container */
+
+    perspective: 1000px;
+  }
+  
+  .cell {
+    background: linear-gradient(145deg, #3b3b3b, #2a2a2a);
+    border-radius: 10px;
+    aspect-ratio: 1 / 1;
+    width: 100%;                /* fills grid column */
+    max-width: 100px;           /* PC max size */
+    border: 1px solid #5a5a5a;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5),
+                2px 2px 10px rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1.5rem, 5vw, 2.4rem); /* scales on small screens */
+    color: #e3e3e3;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+  }
+  
+  .cell:hover {
+    background: linear-gradient(145deg, #4a4a4a, #343434);
+    transform: scale(1.05);
+  }
+  
+  button {
+    margin-top: 25px;
+    padding: 8px 25px;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #d8d8d8, #f5f5f5);
+    color: #222;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  }
+  
+  button:hover {
+    background: linear-gradient(145deg, #ffffff, #cfcfcf);
+    transform: translateY(-2px);
+  }
+  
+  .winning-message {
+    margin: 10px 0px;
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+    font-weight: 600;
+    letter-spacing: 1.2px;
+  }
+  
+  .myB {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  #X, #O {
+    margin-top: 25px;
+    padding: 8px 15px;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  
+  /* --- Large Screens (1200px and above) --- */
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 600px;
+    }
+    
+    .cell {
+      max-width: 100px;
+      font-size: 2.4rem;
+    }
+  }
+  
+  /* --- Phones (480px and below) --- */
+  @media (max-width: 480px) {
+    body {
+      align-items: flex-start;
+      padding-top: 15px;
+    }
+    .container {
+      max-width: 97%;
+      padding: 30px 20px;
+    }
+  
+    .board {
+      gap: 8px;
+    }
+  
+    .cell {
+      font-size: clamp(1rem, 8vw, 1.8rem);
+    }
+    
+    button {
+      padding: 6px 16px;
+      font-size: 0.9rem;
+    }
+    
+    .winning-message {
+      font-size: clamp(0.9rem, 5vw, 1.3rem);
+    }
+  }
+  #line1{
+    height: 100.2%;
+    width: 2px;
+    background-color: #cfcfcf;
+    border-radius: 10px;
+    display: none;
+    /*left 15% 50% 85%*/
+  }
+  #line2{
+    width: 100.2%;
+    height: 2px;
+    background-color: #cfcfcf;
+    border-radius: 10px;
+    display: none;
+    /* top: 15% 50% 85% */
+  }
+  #line3{
+    width: 141%;
+    height: 2px;
+    background-color: #cfcfcf;
+    display: none;
+    /* top-left to bottom-right */
+    /* transform-origin: top left; */
+    /* transform: rotate(45deg); */
+
+    /* top-right to bottom-left */
+    /* bottom: 0px; */
+    /* transform: rotate(-45deg); */
+    /* transform-origin: top left; */
+  }
