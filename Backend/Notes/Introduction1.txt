@@ -1,0 +1,50 @@
+** NodeJS 
+Capabel of asynous tasks. 
+
+
+** index file Name!
+    while exporting from a folder , export all function in a index.js file 
+    while importing just import the folder - it auto understand we are importing index.js file 
+    * In Node js rule : If only folder name is given then by default it export index.js!
+        If no index.js then gives error!
+
+** Processer!
+    * Single core processor:
+        One time only 1 process will be handled.
+    * octa core processor:
+        8 process at one time.
+Q. In Single processer if we are doing multiple task It still works ?
+->  Not wroking parallel but concurrently.
+    context switching ! runs 1 process for some time one task then switch to another, its so fast we assume it works at once.
+    * Dual core : 2 processor - handle 2 process parallely.
+
+** Thread , a smallest unit of task || a subset of process.
+   * multiple Thread :  
+        1Process -> 1task file download, 2task print page, 3task file transfer.
+        If Single processor then it switch b/w Threads. 
+        1process can Also get  multiple processor also if requier.
+
+** If game/app is 20gb & our RAM is 8gb , How works?
+   No need to load entier 20gb in RAM , it only load that much how much we need! Virtual Memory.
+   Cause our app/game is in multiple component/parts thats how RAM load it. 
+
+** No one will use if your website is synchronously cause slow & oneByone execution,
+   But JS is synchronous ?
+   asyn & WebAPI(set..) & eventLoop(promise,DOM..) to execute asynchronous. 
+
+** Node JS Have asynchronous ability ! For NodeJS hows asynchronous? for js its webAPI&eventLoop!
+   OS HAVE : Timer , File (read,edit..), NetworkCall (send data,recive,fetch,connect..).
+   Js don't have anything that access OS directly. 
+   * C/Cpp can talk to OS
+   * To use server we need OS.
+   * Node JS : we can use it on any OS !!!
+     NodeJS have Global Object, It can use webAPI. 
+-> ** Libuv: written in C provide asynchronous I/O based on event Loop, Cause C can access OS !!!
+   v8 -> Libuv -> OS // v8 Can not directly access OS operations cause its synchronous
+   v8 <- Libuv <- OS // Libuv is used to intract with OS
+   NodeJS get direct access to OS by Libuv. It don't use browser like JS cause browser UI no server.
+   NodeJS runs without browser also!!!No rendering, No DOM, No documents!!
+   
+** All hardware devices access is granted by OS.
+   The operating system controls and grants access to all hardware devices using system calls and device drivers.
+

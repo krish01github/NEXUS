@@ -1,0 +1,39 @@
+SQL Pain Point : When you wanna add new Coloum. Cause we deal will million data then allocate space.
+* space is not allocated row after row. Cause we don't know size for each row.
+* So when new Coloum will take alot of time or there maybe no memory for it.
+
+** Normalization :
+reduce redundancy
+avoid update / insert / delete anomalies
+improve data integrity
+| Normal Form | Eliminates            |
+| ----------- | --------------------- |
+| 1NF         | Repeating groups      |
+| 2NF         | Partial dependency    |2 table - related/connect - pkey in other fkey
+| 3NF         | Transitive dependency |
+| BCNF        | Complex anomalies     |
+
+** Banking uses SQL cause of ACID property.
+
+** Vertical & Horizontal scaling :-
+sharding -> data multiple server.
+Q. data only single copy ? Distributed DB - MongoDB !
+-> No, replica/copy of DATA so that if any currupted u have backup.So complex work cause of sharding.
+    also the load is not one single DB. LoadBalancer -> one DB checks load.
+    ** Challenges : sync all DB. so, always goes to master server first Arch.
+SQL : Vertical scaling : add ram same server
+MongoDB : BOTH scaling : Horizontal, bring another storage
+ 
+** CAP/Brewer's Theorm :- consistency ability partition tolorence.
+    ON Distributed DB 
+    - garenty 2 property SQL or NOSQL->
+         consistency(Data Should be same,response needed not nessary up-to-date) &
+         partition tolorence - if network communication between nodes is broken.
+| Scenario          | SQL (Bank)      | MongoDB        |
+| ----------------- | --------------- | -------------- |
+| Network partition | Reject requests | Serve requests |
+| Priority          | Consistency     | Availability   |
+| Wrong data risk   | ❌ Never        | ⚠️ Possible    |
+| CAP type          | CP              | AP             |
+
+

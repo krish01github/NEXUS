@@ -1,0 +1,63 @@
+** express(backend) -takls-> mongoose -talks-> MongoDB -> DB !
+** mongoose is lib for mongodb. mongoose can manupulate js object and convert and send to mongodb.
+
+** Install mongoose
+    npm i mongoose
+
+** Schema -> Models_Validation
+-schema level validation
+-API Level validation 
+   (Eg: in schema email immutable but no error if tried to update.)
+    No much DB call happens
+
+** Password are stored in # form not in plane text.
+   * Encryption :- krish -key-> e29jw stores e29jw in DB.
+     A key is a secret value used by an encryption algorithm. key different for encryp&Decrpy || same. 
+     If key is also copied or leaked !
+   * we don't neet to Decrpy only encryption possible : Hashing Algorithm.
+     eg : SHA256, don't allow you to catch any pattern. Only Brute force attek could work that takes forever.   
+     But hacker have made Rainbow table :- password | hashcode -> very common password only.
+** salt Adding :-  add different salt to every password then we have to store many salt.
+   *  same salt isn't adviced. 
+   password: krish
+   addSalt: krish+qiwi 
+   newPassword : krishqiwi -> #ing -> store that in DB. 
+   install node.bcrypt.js :
+         npm i bcrypt
+   install validator :
+         npm i validator 
+
+** After login to get data use : session id!
+ // Session Id ?! : Give a session id when u login and maintain its record.
+bad 1.if in Db then too many call !
+bad 2.if kept in server ,  all server of cluster will have it. If session id got stole !
+
+** Hashing : one way ! && Encryption,Decrpyt is reversable.
+*3.Digital Signature:- key->string
+    *If encrypted with public & Decrpyt with private & vice versa.
+    private key : to encrypte & send server.
+    public key : everyone. But actual private key can be Decrpyted only. So no frad can create a hash cause it don't have private key.
+    👉 Public key is NOT used to create a hash
+    👉 Public key is used to decrypt the signature, not to hash
+
+** hash colision : same for 2 input ! Best hash is which have mini hash.
+   
+** JWT Tokens (jwt.io)+ cookie editor
+* Just cookie we can get access?
+  don't need to send username + password always after login so we use JWT tokens.
+  when it check authentication of user then server gives a JWT token (string). No need to keep in DB. 
+
+  EG : JWT token -> parts -> header + payload(we can send anything) + Digital Signature
+  * JWT stores like only username no password cause password is sensitive part.
+  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.KMUFsIDTnFmyG3nMiGM6H9FNFUROf3wh7SmqJp-QV30
+  * header + payload => are NOT encrypted!
+
+  * header : which algorithm used. 
+  * payload : {username: krish, ..} // user Info only & no sensitive Info
+  *Digital Signature: encrypted !
+    header + payload → hash
+    hash encrypted using private key → signature
+    receiver hashes header + payload again
+    receiver decrypts signature using public key
+    if both hashes match → signature is valid
+

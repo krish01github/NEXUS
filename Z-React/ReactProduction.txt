@@ -32,7 +32,7 @@
     Many Bundler : webpack,vite,parcel. So, all this optimisation is done by Bundler.
 
 ** parcel ::repo  https://github.com/krish01github/NEXUS.git
-    npm init
+    npm init // package.json
     npm install
     npm install parcel //install parcel in node_module dependency
     npm install -D  parcel // dev dependency

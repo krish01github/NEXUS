@@ -1,0 +1,31 @@
+** MongoDB : NoSQL -> can also behave like SQL.
+   just like json , not table called collection, 1line field
+
+Internal MongoDB:-
+
+** If in our DB server/ssd we store in Array form without order : Search complexity is n.
+  If sorted also -> Data aren't stored of same size (field data size aren't same)
+  So You can't say logn cause finding the address using binary search isn't possible due to size difference.
+  Also inserting in sorted form time complexity is n But unsorted is 1.
+
+** Keep in formate like :-  search[index|address] ---> ssd [..]
+   Now we can apply binary search on search , address in search[] is physical pointer ssd.
+   * If search[] -> Array used.
+   --Challenges : we have to add at correct position in search[] so there time complexity logn.
+** Challenges:  Also we always don't have unique as number/index so, IT COULD BE STRING so size again imbalance.
+ NO ARRAY!
+** binary tree if grow in one direction Time complexity n.
+ NO binary tree!
+** AVL Tree :- It balance itself time complexity logn search-insert-delete.
+ NO AVL TREE for indexing!? 
+
+** B Tree : Even the starting Node points to actual ssd. But not good for range querry.
+** B+ Tree :- sector(cake pice) Track(small part of sector).
+At a time it will bring a block in RAM , not in byte. After in RAM then reads that byte.
+So, B+ tree , in one Node we can keep multiple index entries. So, when reading a block we can read multiple entries directly.
+** Actual info is present in LEAF NODE only! So LEAF node have the pointer to ssd.
+   Which pointer is left that points to *range querry which points to next side LEAF block. 
+   1 pointer is left cause, 1pointer is always extra !
+*1key -> 2pointer , 2key -> 3pointer ..!!
+Saved time.!!
+

@@ -11,10 +11,10 @@ function App(){
     return (
         <>
             <GlobalContext.Provider value={{counts:count, setCounts:setCount}}>
-            <h1>Timer : {count}</h1>
-            <Increment counts = {count} setCounts = {setCount}/>
-            <Decrement counts = {count} setCounts = {setCount}/>
-            <Second/>
+                <h1>Timer : {count}</h1>
+                <Increment counts = {count} setCounts = {setCount}/>
+                <Decrement counts = {count} setCounts = {setCount}/>
+                <Second/>
             </GlobalContext.Provider>
         </>
     )

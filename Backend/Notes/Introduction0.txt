@@ -1,0 +1,61 @@
+** Node Js  -> v8 engine + GlobalObject(setTimeOut,..fetch(),..console.log(),..DOM,..Connect DB)
+In Node Js there is v8 Engine (picec of code written in C++ which understand ur JS code).
+v8 can be appended with any c++ application.
+
+* Does Js code convert into C++?
+No : Direct runs :- js file is simply input to v8 that convert to machine code.
+v8 is Single Threaded.
+
+** Server 
+serves the request.How to make server nothing but JS file. Takes info from DataBase.
+Cause we never xpose DB directly.
+All credential,BusnessLogic is kept at backend.
+
+** DataBase - MongoDB 
+
+-----------------------------------------------------------------------------------------------------------------------
+
+** require("./fileDestination"); // CJS: common js module
+require Implementation :- that fileDestination code comes to current code.
+iife : The entier require() code wrap upin a function
+    (function (){})();
+Q. we need to run another .js file before running current .js file?
+    I need other.js in current file! This are called module.
+*   require("fileName");
+Q. We want to use function of another .js file in current .js file ?
+*   module.exports = functionName; // in another .js file if one function
+    module.exports = {f1,f2..}; || module.exports = {f1:f1,f2:f2..};// key-value same so can write directly
+    module.exports.keyName = f1 ;
+    * module.exports is an empty object -> {}
+    const var = require("./fileName"); //In current file, runs fileName code.
+    var.functionName(); //functionName->KEY !! can use that function in current file.
+
+** new method for require() is import export ! 
+BUT: Node js follows cjs && new module mjs having import&export, its not Node behaviour. 
+* So make the file name .mjs!! ALSO it runs imported file once!!
+BUT Works in React: Because React code does NOT run directly in Node. It runs through a bundler first & transpile for browser.
+* IN React we had bundler so it handled .mjs things.
+* If you want to use .js only !
+    In package.json -> Only for NodeJS not React-ScriptTag
+    {"type" : "module"} //commonjs old method
+import sum from "./newsecond.js";
+export default sum;
+
+--------------------------------------------------------------------------------------------------------------------
+** CJS & MJS ! 
+* cjs [old way & still follows in industry]
+    -require
+    -synchornus
+        If multiple require exist then , it load one by one !
+    -Non strict Mode : "use strict"; // After
+        // Allows 
+        a=10;
+        console.log(a);
+* mjs / esmodule [new way]
+    -import & Export 
+    -unsynchornus
+        If multiple import exist the , It don't wait for other It works in paralle !
+    -strict Mode :  automatically in ES modules (mjs).
+        // Don't allow default !
+        a = 10;
+        console.log(a);

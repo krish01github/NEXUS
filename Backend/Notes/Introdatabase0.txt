@@ -1,0 +1,40 @@
+* WE NEED DATABASE ! Physical location - Permanent Storage.
+* DB - Secondary Memory 
+** DATA should be organised way ! Rows & Colums 
+** File Storage is not DB cause you can't use querrys.So, organise it.
+** Backend talks to  DBMS Application, runs querrys and send data back.
+
+** Why excel isn't DB :-
+   -Limit no of Rows.
+   -If multiple user uses then data could be overwrite. Crashs.
+   -No data filltering
+   -Hangs
+
+** SQL : Structure querry Language.
+** Whats Structure?
+   can use querry.
+
+** vedio, images are under unStructure. can't use querry & Time to process vedio is longer in ram.
+  Store the link (URL) + metadata in a structured DB
+  Store the actual video/audio/image in file/object storage
+  ** 
+  STRUCTURED DB (Metadata)        UNSTRUCTURED STORAGE (Actual File)
+   -----------------------       -----------------------------------
+    video_id: 101        ───────▶  /videos/101.mp4
+    title: "Intro"
+    duration: 120 sec
+    owner_id: 7
+  ** 101 is metadata !
+
+** What is Semi-Structured Data?
+Data that does not follow a strict table schema (rows & columns),
+but still has some structure (keys, tags, hierarchy).
+It sits between structured and unstructured data.
+Eg : JSON, XML 
+
+** SQL : ACID property 
+Actomicity :Either all operations succeed Or none of them are applied
+consistency:A transaction must take the database from one valid state to another.
+isolation  :Multiple transactions run as if they were sequential.
+durability :Once a transaction is committed, it stays — even after crash.
+

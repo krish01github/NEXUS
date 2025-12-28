@@ -1,0 +1,23 @@
+Install MongoDB :- MongoDB is schema less.
+*two ways one install in computer and make secondary memory as DB. Other use server.
+*free plan we don't get sharding -> scaling to new server.
+*clustor -> alot of server. Cause it makes repical itself. clustor is 512mb not single server 512mb FREE PLAN.
+*download MongoDB compass. To see Your DB. connect to clustor.
+*collection -> TABLE in SQL , Document -> Row
+
+* Connection string: To Connect to clustor. ** Don't add @ in password or else use %40 !!
+mongodb+srv://krish:@Krish9611785530@codinglearning.1um5h8j.mongodb.net/
+* Install compass 
+* Install mongodb Node.js Driver : so that backend can intract with DB
+  npm i mongodb  
+
+*MongoDB : id created by system , can be used to search.
+
+*MongoDB is schemaless but you can define schema. schema is important for structure. 
+
+*The collection (table equivalent) is created automatically when you first insert data.
+ It creates when first insertion occures. NO error!
+
+*DataBase :: All Data should be filtered/checked before putting into DB!   
+
+*commands in mongodb is complex so we use mongoose.

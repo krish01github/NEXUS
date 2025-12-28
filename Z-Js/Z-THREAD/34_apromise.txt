@@ -35,9 +35,9 @@ const variable = fetch('') // used to fetch data and store in varibale // asyncr
         {
 
         }
-        else[
+        else{
             throw new Error("Error ");
-        ]
+    }
     })
     .catch(error=>{
 

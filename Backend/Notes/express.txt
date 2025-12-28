@@ -1,0 +1,48 @@
+** CRUD : create , read , update , delete 
+   Request & Respond  
+* create: post : data in frontend we give it to backend so that it coukd be saved in DB.
+* Read :http methods: get 
+* update :http methods: patch & put.
+   patch when you want to change small unit, put for change all units. 
+* delete : delete()
+
+REST API : get,post,patch,put -> frontend talks to backend
+** const var = fetch('https://.com" , { // what should you do with the link.
+    method : "",
+    body:  ,
+    headers: ,
+   });
+
+** Install express  :-
+   * npm i  express
+
+* Nodemon : it restart the server whenever an update/changes happen
+    * npm i nodemon
+    * sudo npm i -g nodemon
+    * nodemon Filename.js
+
+** Server Express :-
+    const express = require('express');
+    const app = express();// server created
+
+** Custom Port :-
+    app.listen(400, ()=>{
+        console.log("Port : 400");
+    })
+
+** Route :-
+    * app.use() -> middle ware
+    app.use("/route", (request,respond)=>{ // localhost:400/route
+        res.send(
+            {
+                "Name":"Krish"
+            }
+        )
+    })
+    ** "/" should always be at last or else app.use("/",()=>{}) will alwasy be shown
+    ** "/ho?me" -> o becomes optional -> localhost:400/hme || localhost:400/home
+    ** "/hom+e" -> unlimited m -> localhost:400/hommme
+    ** "/hom*t" -> hom write anything end with 't' -> localhost:400/homdhuwdiuwhiuwhiuwt
+    
+** Dynamic route : PARAMS 
+ "/home/:id" -> request.params -> prints the id fromlink

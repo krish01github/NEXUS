@@ -59,7 +59,7 @@ React will do the dom manipulation/update on its own .
     when function re-render by useState() the previous value which aren't useState variable
     those get re-initialised , if we want to keep the previous value BY REFERENCE!
     so that after render also it hold previous value.
-    * create a object , key-current which holds the value.
+    * create a object , key:- current which holds the value.
     * syntax : const money = useRef(0);
     money = {
         current : 0
@@ -75,6 +75,7 @@ React will do the dom manipulation/update on its own .
     passing the props from parents to .jsx which needs but if mid .jsx files don't wanna use so its a problem?
     * It also render the mid .jsx cause where ever the props go it re-render so we wanted a way so it can directly acces the data from parent to destination .jsx
     ** Global file where all varible are stored , and all .jsx can access the file so no need to pass props!
+    
     syntax : import { createContext } from "react"; // in datasets.js
         const GlobalContext = createContext(); // can leave or give default content!
         import globalContext from "./global" // where ur are using datasets

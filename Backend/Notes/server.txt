@@ -1,0 +1,60 @@
+** Who is client : who needs services. 
+** Who is server : Who gives services/data.
+
+** Automation - code : Reads request & send requier data. 
+   server : Have all Files - html,css,js,images,database,backend. 
+   * we don't make our computer as server : 24hr online, Internet present.
+     system specification. 
+     If many people try to access my website we can't scale it or do manually.
+   * AWS : Gives there cpu for rent.
+   * Heroku : paid
+   * vercel : 
+
+** server :
+    * Hardware : where all info is stored.web is hosted.
+    * Software : Programs that run on the hardware to provide services.
+
+** when client request a socket is created b/w client & server.
+   Then all IP,port,request is sent throught socket And server gives the data to client.
+   After recive data socket is removed.sometime its open for sometime.
+   * port number of client can get by system But,
+      servers port number : http->80 & https->443 port. 
+** http server : https://coderarmy.in -> converted -> IP address.
+
+** when we make chat application. RealTime. 
+   Can't use socket but web socket. 
+   In this case when friend1 send message then friend2 should forcefully get the message evn if f2 didn't request. 
+
+** Web socket : forcefully send the data without request.
+
+** Server craete : that listen 
+    const http = require('http'); //http is a module.
+    const server = http.createServer();// server craeted that listen.
+    * default listen at port : 80. You can change it on ur wish.
+
+** Monolitic :
+   If hardware server have all fontend,backend,DB,info,payment,authentication
+   Is called monolitic is good for small scale application.
+   For large scale,if server side rendering:-
+   -Entire app must be redeployed for small changes
+   -Hard to scale individual features
+   -One bug can affect the whole system
+   -Performance bottlenecks under heavy load
+
+** Microiltic :
+   All fontend,backend.. kept in different hardware server & they are connected with each other through API.    
+   You can use multiple tech-stack : react & angular can be used for different purpose. 
+   ONLY IN Microiltic. Deployment is complex than monolitic.
+   Easy scaling.
+   * API : Talk with each other!
+
+1. codeBase
+2. Scalbility
+3. Devlopment
+4. Deployment
+5. Tech stack
+6. bug
+7. Server Failure : all lost in monolitic
+8. Maintainence
+9. Debugging
+10. Cost

@@ -1,0 +1,85 @@
+** GET :- Read Data :- go network & check -> get 
+app.get("/user", (req,res)=>{
+    res.send({
+        "name":"Krish",
+        "age":23
+    })
+})
+** use params in postman. -> comes in link -> quary parameter.
+** with get&delete : body is not recommended.
+** If sensitive data then use body!
+** req.query -> get u the query in object form 
+
+** POSTMAN : To use for testing API : Cause we aren't building frontend!!
+   * http request 
+   * Has all method!
+   * choose method > paste the link-localhost -> send, Get the O/P.
+   * body > raw : can send any data in JSON formate.
+
+** body will have the data sent !
+** type od data file. 'Content-type' : 'application/json'
+
+** Parsing :
+  * app.use(express.json()); // Parsing : middleWARE
+  * JSON              VS    JS : backend can be any language
+    string            | 
+    understood by all |
+    can't sendfunction|
+    Undefined         |  
+    key-> string only |
+    value-> number,str|
+    ,bool,array,object|
+    ,null             |
+
+| Side     | Action  | Function           |
+| -------- | ------- | ------------------ |
+| Frontend | Send    | `JSON.stringify()` |
+| Backend  | Receive | `express.json()`   |
+| Backend  | Send    | `res.json()`       |
+| Frontend | Receive | `response.json()`  |
+** .json() does NOT always do the same thing as stringify; on frontend it parses JSON, on backend it stringifies and sends JSON.
+** .json() is NOT a method on objects or arrays its for express 
+** JSON.parse() is a JavaScript built-in function that converts a JSON string into a JavaScript object.
+JS Object --JSON.stringify()--> JSON String
+JSON String --JSON.parse()-----> JS Object // it need all data to parse
+** express.json() -> recive data in stream so it is used 
+
+** app.use : if first part route matches then nested.
+** app.get,app.post,app.patch,app.put(replace),app.delete : untill the entier string matches! 
+
+
+** Post():- create
+// post 
+app.post("/user", (req,res)=>{
+    console.log(req.body);// data from frontend!! Undefined if no parsing.
+    res.send("Data Saved sss"); // Send Info Back 
+})
+//frontend
+const response = await fetch('https://api.example.com/data',{
+    method:'POST',
+    headers:{
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ // Data sent in body !
+        name:'John',
+        age:30
+    })
+})
+
+** Patch :- update 
+// frontend
+const response1 = await fetch('https://api.example.com/data',{
+    method:'PATCH',
+    headers:{
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ // Data Which we are updating in body
+        age:30
+    })
+})
+
+** req :-
+req.url       // "/user/42?active=true"
+req.path      // "/user/42"
+req.query     // { active: "true" }
+req.params    // { id: "42" }   // if route is /user/:id

@@ -1,0 +1,4 @@
+const bk = BookStore.find(info => info.id == req.body.id);
+
+bk is with refence of array ! bk is pointing in that array.
+cause copy by ref for object !

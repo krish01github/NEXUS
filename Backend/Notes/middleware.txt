@@ -1,0 +1,41 @@
+** First the request goes to app.use()
+MiddleWare : callback function that don't send response But help in processing.
+respnseHandler : that send the response!
+** The callback function that do not send the response but helps is call MiddleWare.
+** The callback function that send the response is NOT call MiddleWare , called respnseHandler/reqestHandler.
+
+** app.use(express.json());// Middle ware
+
+Log maintain kar ke rakhna :-
+-timing, url, typeof request get|put|patch|delete.
+* `${Date.now()} ${req.method} ${req.url}`
+-To understand which caused crash. 
+
+** middleWARE : 
+** app.use("/", (req,res,next)=>{
+     console.log(`${Date.now()} ${req.method} ${req.url}`);
+     next();// goes to next callback Or method
+})
+** next() goes to the next matching handler in order of definition.
+✅ The next callback of the same app.use()
+✅ Another app.use("/")
+✅ A route handler like app.get("/"), app.post("/"), etc.Prefix wise
+app.use()   → runs first (method-agnostic)
+next()      → continue
+app.get()   → ONLY if request method === GET
+app.patch() → ONLY if request method === PATCH
+
+*** used to check authentication.
+
+** Prefix matching : 
+app.use("/admin") matches ALL paths that START with /admin
+* So it matches:
+/admin
+/admin/1
+/admin/abc
+/admin/settings/profile
+
+** folder-middleWARE > const Auth = (req,res,next)=>{next();} ::  module.exports = {Auth}
+   const {Auth} = require("/...fn"); //current, sent as object
+   app.use("/admin", Auth);
+OR : app.get("/admin", Auth, (req,res)=>{}); // most uses

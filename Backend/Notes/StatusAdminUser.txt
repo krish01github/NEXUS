@@ -1,0 +1,16 @@
+Admin : Have alot of power. CRUD new item add,delete,update type of power.
+USER : can see, add to cart,  delete from cart.
+
+** authentication: claim if i am the correct user/admin.
+** authorization: Powers, user/admin have ! 
+
+*** STATUS CODE 
+** When we send response : status code
+200-ok-successful get,put,patch 
+201-created-resoures created
+400-bad request-Invalid client
+401-unauthorized-authentication needed
+403-forbidden-no permission
+404-Not Found-resoures dont exist
+500-Internal server error server-side failure
+* Fixed a number for those error , cause we can send any message

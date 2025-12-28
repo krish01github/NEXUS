@@ -1,0 +1,14 @@
+*** NodeJS
+** const http = require('http'); //http is a module.
+** const server = http.createServer((req,res)=>{ // return server object
+      res.end("Hello Krish");
+    });
+   Server created & response "hello krish" data.
+** server.listen(4000,()=>{ // 4000 is the user-edited port number : so its listening localhost:4000
+        console.log("I am listening to port Number 4000");
+    }) 
+   We made our computer as host-server -> localhost:4000
+
+*** 
+
+*** Express : better we create a server on Express!
